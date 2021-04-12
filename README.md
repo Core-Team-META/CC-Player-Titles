@@ -7,7 +7,7 @@ A set of user interface components shows this special recognition for everyone: 
 [![Build Status](https://github.com/Core-Team-META/CC-Player-Titles/workflows/CI/badge.svg)](https://github.com/Core-Team-META/CC-Player-Titles/actions/workflows/ci.yml?query=workflow%3ACI%29)
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/Core-Team-META/CC-Player-Titles?style=plastic)
 
-![TitleCard](/Screenshots/TitleCard.jpg)
+![TitleCard](/Screenshots/TitleCard.png)
 
 </div>
 
