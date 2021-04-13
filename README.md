@@ -23,7 +23,7 @@ Includes:
 
 Created by @NicholasForeman of Team META
 
-Make sure to read the PlayerTitles_README file for setup and configuration instructions
+Make sure to read the [README](https://core-team-meta.github.io/CC-Player-Titles/) file for setup and configuration instructions
 
 ## Credits
 
