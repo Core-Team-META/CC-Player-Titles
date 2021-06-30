@@ -3,7 +3,7 @@ MarketplaceDetails {
   Id: "2b2c56fbdeda45ffb65da5ea7a7dd032"
   OwnerAccountId: "ef18f7661bf14d0eae60d7f31ea769af"
   OwnerName: "TeamMETA"
-  Version: "1.6.0"
+  Version: "1.8.0"
 }
 AssetIdsOriginalToNew {
   key: 182919275251591290

@@ -235,7 +235,6 @@ Module.titles = {
 			-- "f9df3457225741c89209f6d484d0eba8", -- NicholasForeman
 			-- "fdae8d1d32b040d792dc589edda59ced", -- Shhteve
 			-- "581ff579fd864966aec56450754db1fb", -- Waffle
-
 		},
 	},
 
