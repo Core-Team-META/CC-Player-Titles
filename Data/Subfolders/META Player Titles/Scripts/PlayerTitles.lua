@@ -158,7 +158,6 @@ Module.titles = {
 			"400d8e7acb154e5bb64368411824b61d", -- Bigglebuns
 			"901b7628983c4c8db4282f24afeda57a", -- Buckmonster
 			"c643c92a06e943c4aef66a283f5dc1e0", -- Bumblebear
-			"fb91e175e1624888805a03ebb32c50a0", -- BlueClaire
 			"d97586e1f850481da13ee26d5cbddc02", -- Chris
 			"3819113b7af34fb786a56960fc08136a", -- coreslinkous
 			"65f3dec3b6dd45c2845a55a7af240adc", -- deadlyfishesMC
@@ -201,31 +200,41 @@ Module.titles = {
 		iconRotation = 45,
 		isModerator = false,
 		playerMUIDs = {
+			-- Team META Account
 			"ef18f7661bf14d0eae60d7f31ea769af", -- TeamMETA
 
-			"d6d9d578840a44c79a3f05c15de23bf8", -- Aggripina
-			"a136c0d1d9454d539c9932354198fc29", -- Ooccoo
-
+			-- Active META Members
+			"d6d9d578840a44c79a3f05c15de23bf8", -- Aggripina (Lead)
 			"eea739085f20445392c0ab999ab87bb6", -- Aj
-			"557d4f1ae17646579646dfd20dcb7b66", -- AwkwardGameDev
+			"557d4f1ae17646579646dfd20dcb7b66", -- AwkwardGameDev (Lead)
+			"0ea6612ceab7456a8a3a963a94808295", -- blaking707 (Lead)
 			"05844b173bca411582347a1d07d953f2", -- Burnzie
 			"d5daea732ee3422fbe85aecb900e73ec", -- Coderz
 			"1f0588bf88d14c258d7384902f71f132", -- Daddio
 			"0b63f4ffba9c4518b50e4f815a9ec51a", -- Datonare
-			"eaba4947069846dbb72fc5efb0f04f47", -- Divided
+			"eaba4947069846dbb72fc5efb0f04f47", -- Divide
+			"df38a4dc4cf245e48f6b961570137dc2", -- Egg
 			"385b45d7abdb499f8664c6cb01df521b", -- estlogic
-			"fc5fca8d934b4e5f9120f67dd7eb7449", -- Jarsa
-			"1f3edd620c904e30a4e0223dd64bcc2a", -- Keppu
-			"df38a4dc4cf245e48f6b961570137dc2", -- KidEgg
-			"fdb45035857a4e87b17344cd891c48c5", -- KonzZodrei
-			"9cc8d222e6d14da68dc2ba0a9a4f0439", -- Melamoryxq
 			"91166471c6ea4d17be6772da4973e6b7", -- mjcortes782
-			"d1073dbcc404405cbef8ce728e53d380", -- Morticai
+			"fc5fca8d934b4e5f9120f67dd7eb7449", -- Jarsa
+			"fdb45035857a4e87b17344cd891c48c5", -- KonzZwodrei
+			"111fdb0a14b0407cb48f5856cf6f8f6e", -- LotusCracker
+			"9cc8d222e6d14da68dc2ba0a9a4f0439", -- Melamoryxq (Lead)
+			"d1073dbcc404405cbef8ce728e53d380", -- Morticai (Lead)
 			"94d3fd50c4824f019421895ec8dbf099", -- Mucusinator
-			"f9df3457225741c89209f6d484d0eba8", -- NicholasForeman
+			"ca1f49507ccf4675984c59be9191cde6", -- Ocylix
+			"a136c0d1d9454d539c9932354198fc29", -- Ooccoo (Lead)
+			"c51d9bb1185a426fbee7e1b4ab27f26b", -- Outrun
 			"1f67a03d5a8f478b993aad1c79b45640", -- Rolok
-			"0e0d7d0be7fa44d296dae3d2b26410f5", -- StayPunny
+			"0e0d7d0be7fa44d296dae3d2b26410f5", -- Staypunny
 			"e730c40ae54d4c588658667927acc6d8", -- WindfallDrifter
+
+			-- Former META Members :(
+			-- "1f3edd620c904e30a4e0223dd64bcc2a", -- Keppu
+			-- "5c3b7b02607c4e368fc063c410123697", -- Knar
+			-- "f9df3457225741c89209f6d484d0eba8", -- NicholasForeman
+			-- "fdae8d1d32b040d792dc589edda59ced", -- Shhteve
+			-- "581ff579fd864966aec56450754db1fb", -- Waffle
 
 		},
 	},
@@ -375,7 +384,6 @@ function Module.GetPlayerTitleByMUID(player)
 	end
 end
 
-
 --	table GetPlayerTitleByName(Player)
 --	Gets a title for a specific player based on their name
 function Module.GetPlayerTitleByName(player)
@@ -389,7 +397,6 @@ function Module.GetPlayerTitleByName(player)
 		end
 	end
 end
-
 
 --	table GetPlayerTitle(Player)
 --	Gets a title for a specific player
