@@ -436,13 +436,13 @@ function Tick()
 	for _, player in pairs(Game.GetPlayers()) do
 		UpdatePlayer(player)
 
-		if((playerTeams[player] ~= nil) and (player.team ~= playerTeams[player])) then
+		--if((playerTeams[player] ~= nil) and (player.team ~= playerTeams[player])) then
 			UpdatePlayerEntry(player)
 
 			if(player == LocalPlayer) then
 				UpdateHeader()
 			end
-		end
+		--end
 	end
 end
 

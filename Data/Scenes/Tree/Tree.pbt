@@ -143,6 +143,10 @@ Objects {
           Rotator {
           }
         }
+        Overrides {
+          Name: "cs:PlayerNameColorMode"
+          String: "STATIC"
+        }
       }
     }
     TemplateAsset {

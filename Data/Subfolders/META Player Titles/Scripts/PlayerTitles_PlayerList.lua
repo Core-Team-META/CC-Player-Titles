@@ -318,13 +318,13 @@ end
 --	Updates entries for all players and Header for LocalPlayer
 function Tick()
 	for _, player in pairs(Game.GetPlayers()) do
-		if((playerTeams[player] ~= nil) and (player.team ~= playerTeams[player])) then
+		--if((playerTeams[player] ~= nil) and (player.team ~= playerTeams[player])) then
 			UpdatePlayerEntry(player)
 
 			if(player == LocalPlayer) then
 				UpdateHeader()
 			end
-		end
+		--end
 	end
 end
 
