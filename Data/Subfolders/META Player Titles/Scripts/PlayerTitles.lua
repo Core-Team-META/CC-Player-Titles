@@ -1,9 +1,10 @@
 --[[
 
 	Player Titles - Module
-	1.0.2 - 2020/10/13
+	1.1.0 - 2021/7/27
 	Contributors
 		Nicholas Foreman (META) (https://www.coregames.com/user/f9df3457225741c89209f6d484d0eba8)
+		Chipnertkj (https://www.coregames.com/user/aabffd57e2814ff1bc7f80f5fd32b5a4)
 
 
 1.	Getting a MUID
@@ -74,6 +75,12 @@ Module.TeamRelation = {
 	FRIENDLY = 3,
 	ENEMY = 4,
 	SELF_NEUTRAL = 5,
+}
+
+Module.PartyPosition = {
+	LEADER = 1,
+	MEMBER = 2,
+	NONE = 3,
 }
 
 Module.Color = {
@@ -228,6 +235,7 @@ Module.titles = {
 			"1f67a03d5a8f478b993aad1c79b45640", -- Rolok
 			"0e0d7d0be7fa44d296dae3d2b26410f5", -- Staypunny
 			"e730c40ae54d4c588658667927acc6d8", -- WindfallDrifter
+			"aabffd57e2814ff1bc7f80f5fd32b5a4", -- Chipnertkj ;)
 
 			-- Former META Members :(
 			-- "1f3edd620c904e30a4e0223dd64bcc2a", -- Keppu
@@ -317,6 +325,37 @@ function Module.GetPlayerTeamColor(player1, player2, neutralTeamColor, friendlyT
 		return friendlyTeamColor
 	elseif(teamRelation == Module.TeamRelation.ENEMY) then
 		return enemyTeamColor
+	end
+end
+
+--	PartyPosition GetPartyPosition(Player, Player)
+--	Returns the Module.PartyPosition of player2 from the point of view of player1
+function Module.GetPartyPosition(player1, player2)
+	if player1.isInParty and player2.isInParty then
+		local pi1 = player1:GetPartyInfo()
+		local pi2 = player2:GetPartyInfo()
+		if pi1.id == pi2.id then
+			if player2.isPartyLeader then
+				return Module.PartyPosition.LEADER
+			else
+				return Module.PartyPosition.MEMBER
+			end
+		end
+	end
+	return Module.PartyPosition.NONE
+end
+
+--	Color GetPlayerPartyColor(Player, Player, Color, Color, Color)
+--	Returns a color based on the position of player2 in relation to player1's party
+function Module.GetPlayerPartyColor(player1, player2, neutralPartyColor, memberPartyColor, leaderPartyColor)
+	local partyPosition = Module.GetPartyPosition(player1, player2)
+
+	if partyPosition == Module.PartyPosition.NONE then
+		return neutralPartyColor
+	elseif partyPosition == Module.PartyPosition.MEMBER then
+		return memberPartyColor
+	elseif partyPosition == Module.PartyPosition.LEADER then
+		return leaderPartyColor
 	end
 end
 

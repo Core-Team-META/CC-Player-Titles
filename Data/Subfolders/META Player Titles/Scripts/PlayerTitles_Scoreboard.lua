@@ -1,9 +1,10 @@
 --[[
 
 	Player Titles - Scoreboard (Client)
-	1.0.2 - 2020/10/13
+	1.1.0 - 2021/7/27
 	Contributors
 		Nicholas Foreman (https://www.coregames.com/user/f9df3457225741c89209f6d484d0eba8)
+		Chipnertkj (https://www.coregames.com/user/aabffd57e2814ff1bc7f80f5fd32b5a4)
 
 --]]
 
@@ -42,6 +43,10 @@ local PLAYER_NAME_COLOR = Scoreboard:GetCustomProperty("PlayerNameColor")
 local NEUTRAL_TEAM_COLOR = Scoreboard:GetCustomProperty("NeutralTeamColor")
 local FRIENDLY_TEAM_COLOR = Scoreboard:GetCustomProperty("FriendlyTeamColor")
 local ENEMY_TEAM_COLOR = Scoreboard:GetCustomProperty("EnemyTeamColor")
+
+local SHOW_PARTY_COLOR = Scoreboard:GetCustomProperty("ShowPartyColor")
+local PARTY_MEMBER_COLOR = Scoreboard:GetCustomProperty("PartyMemberColor")
+local PARTY_LEADER_COLOR = Scoreboard:GetCustomProperty("PartyLeaderColor")
 
 local SHOW_TITLE_ICON = Scoreboard:GetCustomProperty("ShowTitleIcon")
 local SHOW_TITLE_PREFIX = Scoreboard:GetCustomProperty("ShowTitlePrefix")
@@ -168,7 +173,7 @@ local function CreatePlayerEntry(player)
 	local teamColor = PlayerTitles.GetPlayerTeamColor(LocalPlayer, player, NEUTRAL_TEAM_COLOR, FRIENDLY_TEAM_COLOR, ENEMY_TEAM_COLOR)
 	teamColorImage:SetColor(teamColor)
 
-	playerIconImage:SetImage(player)
+	playerIconImage:SetPlayerProfile(player)
 
 	if(SHOW_TITLE_ICON and title and title.icon) then
 		socialIconImage:SetImage(title.icon or "")
@@ -189,6 +194,28 @@ local function CreatePlayerEntry(player)
 		playerNameText:SetColor(title.prefixColor or COLOR_DEFAULT)
 	else
 		playerNameText:SetColor(PLAYER_NAME_COLOR)
+	end
+
+	do
+		if SHOW_PARTY_COLOR then
+			local color = playerNameText:GetColor()
+			local partyColor = PlayerTitles.GetPlayerPartyColor(LocalPlayer, player, color, PARTY_MEMBER_COLOR, PARTY_LEADER_COLOR)
+			if (PLAYER_NAME_COLOR_MODE ~= "STATIC") then
+				-- shift color towards party colors
+				local v
+				local shift = 0.75
+				v = (color.r < partyColor.r) and 1 or -1
+				color.r = color.r + v*math.abs(color.r-partyColor.r)*shift
+				v = (color.g < partyColor.g) and 1 or -1
+				color.g = color.g + v*math.abs(color.g-partyColor.g)*shift
+				v = (color.b < partyColor.b) and 1 or -1
+				color.b = color.b + v*math.abs(color.b-partyColor.b)*shift
+				playerNameText:SetColor(color)
+			else
+				-- replace color with party color
+				playerNameText:SetColor(partyColor)
+			end
+		end
 	end
 
 	local count = 0
@@ -248,6 +275,28 @@ local function UpdatePlayerEntry(player)
 		playerNameText:SetColor(title.prefixColor or Color.New(0.1, 0.1, 0.1))
 	else
 		playerNameText:SetColor(PLAYER_NAME_COLOR)
+	end
+
+	do
+		if SHOW_PARTY_COLOR then
+			local color = playerNameText:GetColor()
+			local partyColor = PlayerTitles.GetPlayerPartyColor(LocalPlayer, player, color, PARTY_MEMBER_COLOR, PARTY_LEADER_COLOR)
+			if (PLAYER_NAME_COLOR_MODE ~= "STATIC") then
+				-- shift color towards party colors
+				local v
+				local shift = 0.75
+				v = (color.r < partyColor.r) and 1 or -1
+				color.r = color.r + v*math.abs(color.r-partyColor.r)*shift
+				v = (color.g < partyColor.g) and 1 or -1
+				color.g = color.g + v*math.abs(color.g-partyColor.g)*shift
+				v = (color.b < partyColor.b) and 1 or -1
+				color.b = color.b + v*math.abs(color.b-partyColor.b)*shift
+				playerNameText:SetColor(color)
+			else
+				-- replace color with party color
+				playerNameText:SetColor(partyColor)
+			end
+		end
 	end
 end
 

@@ -1,9 +1,10 @@
 --[[
 
 	Player Titles - README
-	1.0.2 - 2020/10/13
+	1.1.0 - 2021/7/27
 	Contributors
 		Nicholas Foreman (META) (https://www.coregames.com/user/f9df3457225741c89209f6d484d0eba8)
+		Chipnertkj (https://www.coregames.com/user/aabffd57e2814ff1bc7f80f5fd32b5a4)
 
 	Player Titles allows game creators to give special roles to themselves, dedicated players, and anyone they deem fit
 	for recognition. With a simple module it's easy to dictate and customize a hierarchy of roles. A set of user interface
