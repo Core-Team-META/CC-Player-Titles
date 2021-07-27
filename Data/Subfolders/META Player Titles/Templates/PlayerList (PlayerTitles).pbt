@@ -59,7 +59,7 @@ Assets {
             }
           }
           Overrides {
-            Name: "cs:ShowPartyColors"
+            Name: "cs:ShowPartyColor"
             Bool: true
           }
           Overrides {
@@ -198,7 +198,7 @@ Assets {
             String: "The easing direction that will be used to ease out; does not apply if EaseToggle is false | IN, OUT, INOUT"
           }
           Overrides {
-            Name: "cs:ShowPartyColors:tooltip"
+            Name: "cs:ShowPartyColor:tooltip"
             String: "Determines whether to color names of players belonging to the same party differently."
           }
           Overrides {
