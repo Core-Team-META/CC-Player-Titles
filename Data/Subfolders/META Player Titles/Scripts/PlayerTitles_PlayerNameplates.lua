@@ -284,11 +284,11 @@ local function Update(nameplate)
 	if((playerMaxHealth[player] ~= nil) and (player.maxHitPoints ~= playerMaxHealth[player])) then
 		UpdateHealth(player, nameplate)
 	end
-	if((playerTeams[player] ~= nil) and (player.team ~= playerTeams[player])) then
+	--if((playerTeams[player] ~= nil) and (player.team ~= playerTeams[player])) then
 		UpdatePlayerNameColor(player, nameplate)
 		UpdateHealthColor(player, nameplate)
 		UpdateVisibility(player, nameplate)
-	end
+	--end
 end
 
 --	string GetProperty(string, table)
