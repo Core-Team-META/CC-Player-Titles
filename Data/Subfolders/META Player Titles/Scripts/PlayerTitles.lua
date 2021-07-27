@@ -1,7 +1,7 @@
 --[[
 
 	Player Titles - Module
-	1.1.0 - 2021/7/27
+	1.0.9 - 2021/7/27
 	Contributors
 		Nicholas Foreman (META) (https://www.coregames.com/user/f9df3457225741c89209f6d484d0eba8)
 		Chipnertkj (https://www.coregames.com/user/aabffd57e2814ff1bc7f80f5fd32b5a4)

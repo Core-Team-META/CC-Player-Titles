@@ -1,7 +1,7 @@
 --[[
 
 	Player Titles - Player Nameplates (Client)
-	1.1.0 - 2021/7/27
+	1.0.9 - 2021/7/27
 	Contributors
 		Nicholas Foreman (https://www.coregames.com/user/f9df3457225741c89209f6d484d0eba8)
 		Chipnertkj (https://www.coregames.com/user/aabffd57e2814ff1bc7f80f5fd32b5a4)
@@ -231,6 +231,8 @@ local function UpdateHealth(player, nameplate)
 
 	local nameplateHealth = nameplate:GetCustomProperty("Health"):WaitForObject()
 	SetText(nameplateHealth, string.format("%d / %d", player.hitPoints or 0, player.maxHitPoints))
+	local nameplateHealthBar = nameplate:GetCustomProperty("HealthBar"):WaitForObject()
+	nameplateHealthBar:SetScale(Vector3.New(0.003, 1.25*((player.hitPoints or 0)/player.maxHitPoints), 0.11))
 end
 
 --	nil UpdateHealthColor(Player, CoreObject)
