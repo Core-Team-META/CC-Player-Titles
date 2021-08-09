@@ -18,6 +18,7 @@ local PlayerTitles = require(script:GetCustomProperty("PlayerTitles"))
 ------------------------------------------------------------------------------------------------------------------------
 local PlayerNameplates = script:GetCustomProperty("PlayerNameplates"):WaitForObject()
 local NameplateTemplate = script:GetCustomProperty("NameplateTemplate")
+local SocketPositionTemplate = script:GetCustomProperty("SocketPositionTemplate")
 
 local LocalPlayer = Game.GetLocalPlayer()
 
@@ -27,9 +28,9 @@ local LocalPlayer = Game.GetLocalPlayer()
 local PLAYER_NAME_COLOR_MODE = PlayerNameplates:GetCustomProperty("PlayerNameColorMode")
 local PLAYER_NAME_COLOR = PlayerNameplates:GetCustomProperty("PlayerNameColor")
 
-local SHOW_STROKES = PlayerNameplates:GetCustomProperty("ShowStrokes")
-
+local SHOW_AVATAR = PlayerNameplates:GetCustomProperty("ShowAvatar")
 local SHOW_HEALTH = PlayerNameplates:GetCustomProperty("ShowHealth")
+local SHOW_ICONS = PlayerNameplates:GetCustomProperty("ShowIcons")
 local SHOW_ON_SELF = PlayerNameplates:GetCustomProperty("ShowOnSelf")
 local SHOW_ON_NEUTRALS = PlayerNameplates:GetCustomProperty("ShowOnNeutrals")
 local SHOW_ON_FRIENDLIES = PlayerNameplates:GetCustomProperty("ShowOnFriendlies")
@@ -53,6 +54,8 @@ local COLOR_DEFAULT = Color.New(1, 1, 1, 1)
 --	INITIAL VARIABLES
 ------------------------------------------------------------------------------------------------------------------------
 local nameplates = {}
+local nameplatesResolution = {}
+local nameplatesIcons = {}
 local playerTeams = {}
 local playerHealth = {}
 local playerMaxHealth = {}
@@ -61,19 +64,6 @@ local playersDead = {}
 ------------------------------------------------------------------------------------------------------------------------
 --	LOCAL FUNCTIONS
 ------------------------------------------------------------------------------------------------------------------------
-
---	nil SetText(CoreObject, string)
---	Sets the text + background text of a WorldText
-local function SetText(object, text)
-	if(not Object.IsValid(object)) then return end
-
-	object.text = text
-	if(not SHOW_STROKES) then return end
-
-	for _, child in pairs(object:GetChildren()) do
-		child.text = text
-	end
-end
 
 --	Player FindPlayerByName(string)
 --	Finds a player in all players by string name
@@ -84,6 +74,25 @@ local function FindPlayerByName(playerName)
 		end
 	end
 end
+
+local function SetIcon(player, number, imageId, color)
+	if player == nil then error("Player is nil.") end
+	if imageId ~= nil then if type(imageId) ~= "string" then error("Argument imageId must be a string or nil.") end end
+	if type(number) ~= "number" then error("Argument number must be a number.") end
+	number = #nameplatesIcons[player] - number + 1
+	print(number)
+	if not nameplatesIcons[player][number] then error("Icon number (" .. tostring(number) .. ") outside of range.") end
+	if imageId == nil then
+		nameplatesIcons[player][number].visibility = Visibility.FORCE_OFF
+	else
+		if color then
+			nameplatesIcons[player][number]:SetColor(color)
+		end
+		nameplatesIcons[player][number]:SetImage(imageId)
+		nameplatesIcons[player][number].visibility = Visibility.INHERIT
+	end
+end
+Events.Connect("PlayerTitles_setIconEvent", SetIcon)
 
 --	nil OnPlayerJoined(Player)
 --	Creates a nameplate for a player
@@ -98,34 +107,38 @@ local function OnPlayerJoined(player)
 	local nameplate = World.SpawnAsset(NameplateTemplate)
 	nameplate.name = player.name
 	nameplates[player] = nameplate
+	nameplatesResolution = nameplate:FindChildByType("UIContainer"):GetCanvasSize()
 
-	local playerNameText, prefixText, healthText, healthBar, healthBarOutline =
+	local nameText, prefixText, avatar, healthText, healthBar, healthBarOutline, playerIcons =
 		nameplate:GetCustomProperty("Name"):WaitForObject(),
 		nameplate:GetCustomProperty("Prefix"):WaitForObject(),
-		nameplate:GetCustomProperty("Health"):WaitForObject(),
-		nameplate:GetCustomProperty("HealthBar"):WaitForObject(),
-		nameplate:GetCustomProperty("HealthBarOutline"):WaitForObject()
+		nameplate:GetCustomProperty("Avatar"):WaitForObject(),
+		nameplate:GetCustomProperty("HealthTextValue"):WaitForObject(),
+		nameplate:GetCustomProperty("HealthBarValue"):WaitForObject(),
+		nameplate:GetCustomProperty("Healthbar"):WaitForObject(),
+		nameplate:FindDescendantsByName("Icon")
+
+	nameplatesIcons[player] = playerIcons
+
+	avatar:SetPlayerProfile(player)
+	avatar.visibility = Visibility.INHERIT
 
 	local teamColor = PlayerTitles.GetPlayerTeamColor(LocalPlayer, player, NEUTRAL_HEALTH_COLOR, FRIENDLY_HEALTH_COLOR, ENEMY_HEALTH_COLOR)
 	healthBar:SetColor(teamColor)
 
-	if(not SHOW_STROKES) then
-		healthBarOutline:Destroy()
-	end
-
-	SetText(playerNameText, player.name)
+	nameText.text = player.name
 
 	if(PLAYER_NAME_COLOR_MODE == "TEAM") then
-		playerNameText:SetColor(teamColor)
+		nameText:SetColor(teamColor)
 	elseif(title and (PLAYER_NAME_COLOR_MODE == "TITLE")) then
-		playerNameText:SetColor(title.prefixColor or COLOR_DEFAULT)
+		nameText:SetColor(title.prefixColor or COLOR_DEFAULT)
 	else
-		playerNameText:SetColor(PLAYER_NAME_COLOR)
+		nameText:SetColor(PLAYER_NAME_COLOR)
 	end
 
 	do
 		if SHOW_PARTY_COLOR then
-			local color = playerNameText:GetColor()
+			local color = nameText:GetColor()
 			local partyColor = PlayerTitles.GetPlayerPartyColor(LocalPlayer, player, color, PARTY_MEMBER_COLOR, PARTY_LEADER_COLOR)
 			if (PLAYER_NAME_COLOR_MODE ~= "STATIC") then
 				-- shift color towards party colors
@@ -137,16 +150,16 @@ local function OnPlayerJoined(player)
 				color.g = color.g + v*math.abs(color.g-partyColor.g)*shift
 				v = (color.b < partyColor.b) and 1 or -1
 				color.b = color.b + v*math.abs(color.b-partyColor.b)*shift
-				playerNameText:SetColor(color)
+				nameText:SetColor(color)
 			else
 				-- replace color with party color
-				playerNameText:SetColor(partyColor)
+				nameText:SetColor(partyColor)
 			end
 		end
 	end
 
 	if(SHOW_HEALTH) then
-		SetText(healthText, string.format("%d / %d", player.hitPoints, player.maxHitPoints))
+		healthText.text =  string.format("%d / %d", player.hitPoints, player.maxHitPoints)
 	else
 		healthText.visibility = Visibility.FORCE_OFF
 		healthBar.visibility = Visibility.FORCE_OFF
@@ -154,14 +167,54 @@ local function OnPlayerJoined(player)
 	end
 
 	if(SHOW_TITLE_PREFIX and title) then
-		SetText(prefixText, title.prefix or "")
+		prefixText.text = title.prefix or ""
 		prefixText:SetColor(title.prefixColor or Color.New(0.1, 0.1, 0.1))
+		prefixText.visibility = Visibility.INHERIT
+	else
+		prefixText.visibility = Visibility.FORCE_OFF
 	end
 
-	nameplate:AttachToPlayer(player, "nameplate")
+	local socketPosition = World.SpawnAsset(SocketPositionTemplate)
+	socketPosition:AttachToPlayer(player, "nameplate")
+	nameplate:Follow(socketPosition)
+
+	if (not SHOW_ICONS) then
+		for i = 1, #playerIcons do
+			playerIcons[i].parent.visibility = Visibility.FORCE_OFF
+		end
+	end
+
+	if (not SHOW_AVATAR) then
+		avatar.parent.visibility = Visibility.FORCE_OFF
+		for i = 1, #playerIcons do
+			playerIcons[i].parent.x = playerIcons[i].parent.x - avatar.width - 20 - 20
+		end
+		healthBarOutline.width = healthBarOutline.width + avatar.width + 20 + 20
+	end
 
 	if(not SHOW_HEALTH) then
-		nameplate:SetPosition(Vector3.New(0, 0, -15))
+		if (SHOW_ICONS) then
+			for i = 1, #playerIcons do
+				playerIcons[i].parent.y = playerIcons[i].parent.y - healthBarOutline.height - 20
+			end
+		else
+			nameText.y = nameText.y + avatar.height - 20 - 40
+			prefixText.y = prefixText.y + avatar.height + 200
+			prefixText.shouldWrapText = false
+			if (SHOW_AVATAR) then
+				nameText.x = nameText.x + avatar.width + 20 + 20
+				prefixText.x = prefixText.x + avatar.width + 20 + 20
+			else
+				nameText.x = 0
+				nameText.anchor = UIPivot.BOTTOM_CENTER
+				nameText.dock = UIPivot.BOTTOM_CENTER
+				prefixText.x = 0
+				prefixText.anchor = UIPivot.BOTTOM_CENTER
+				prefixText.dock = UIPivot.BOTTOM_CENTER
+				prefixText.justification = TextJustify.CENTER
+				nameText.justification = TextJustify.CENTER
+			end
+		end
 	end
 
 	PlayerTitles.SetVisibility(LocalPlayer, player, nameplate, SHOW_ON_SELF, SHOW_ON_NEUTRALS, SHOW_ON_FRIENDLIES, SHOW_ON_ENEMIES)
@@ -181,6 +234,7 @@ local function OnPlayerLeft(player)
 
 	nameplate:Destroy()
 	nameplates[player] = nil
+	nameplatesIcons[player] = nil
 end
 
 --	nil UpdatePlayerNameColor(Player, CoreObject)
@@ -229,10 +283,11 @@ end
 local function UpdateHealth(player, nameplate)
 	if(not Object.IsValid(nameplate)) then return end
 
-	local nameplateHealth = nameplate:GetCustomProperty("Health"):WaitForObject()
-	SetText(nameplateHealth, string.format("%d / %d", player.hitPoints or 0, player.maxHitPoints))
-	local nameplateHealthBar = nameplate:GetCustomProperty("HealthBar"):WaitForObject()
-	nameplateHealthBar:SetScale(Vector3.New(0.003, 1.25*((player.hitPoints or 0)/player.maxHitPoints), 0.11))
+	local nameplateHealth = nameplate:GetCustomProperty("HealthTextValue"):WaitForObject()
+	nameplateHealth.text = string.format("%d / %d", player.hitPoints or 0, player.maxHitPoints)
+	nameplateHealth = nameplate:GetCustomProperty("HealthBarValue"):WaitForObject()
+	local maxSize = nameplatesResolution.x + nameplateHealth.parent.width - 20
+	nameplateHealth.width = -20 - math.floor(((1 - (player.hitPoints or 0) / player.maxHitPoints)) * maxSize)
 end
 
 --	nil UpdateHealthColor(Player, CoreObject)
@@ -240,7 +295,7 @@ end
 local function UpdateHealthColor(player, nameplate)
 	if(not Object.IsValid(nameplate)) then return end
 
-	local nameplateHealthBar = nameplate:GetCustomProperty("HealthBar"):WaitForObject()
+	local nameplateHealthBar = nameplate:GetCustomProperty("HealthBarValue"):WaitForObject()
 	local teamColor = PlayerTitles.GetPlayerTeamColor(LocalPlayer, player, NEUTRAL_HEALTH_COLOR, FRIENDLY_HEALTH_COLOR, ENEMY_HEALTH_COLOR)
 	nameplateHealthBar:SetColor(teamColor)
 end

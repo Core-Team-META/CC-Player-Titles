@@ -1,11 +1,11 @@
-GameId: "8a1d66abf2054a84a25441c9eaa73f11"
-ClientVersion: "1.0.201-prod-s"
+GameId: "9c88770d33894daa9fc87240ef92abdc"
+ClientVersion: "1.53549.506-test-s"
 Name: "META Player Titles test"
-Description: "abcdef"
+Description: "abcd"
 MaxPlayers: 8
 Tags: "Other"
-ScreenshotPaths: "C:/Users/Chipnertkj/Documents/My Games/CORE/Saved/Maps/CC-Player-Titles/Screenshots/Screenshot0002.png"
-OwnerId: "aabffd57e2814ff1bc7f80f5fd32b5a4"
+ScreenshotPaths: "C:/Users/Chipnertkj/Documents/My Games/CORE_Test/Saved/Maps/CC-Player-Titles/Screenshots/Screenshot0001.png"
+OwnerId: "6157fe5758d84407aacd5b57443f8235"
 SerializationVersion: 1
 AllowDirectJoinAsChild: true
 SceneNameToSceneIdMap {

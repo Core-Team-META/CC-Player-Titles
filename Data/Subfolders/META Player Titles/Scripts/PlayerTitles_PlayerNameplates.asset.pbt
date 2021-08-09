@@ -21,7 +21,13 @@ Assets {
         ObjectReference {
         }
       }
+      Overrides {
+        Name: "cs:SocketPositionTemplate"
+        AssetReference {
+          Id: 799365241416341159
+        }
+      }
     }
   }
-  SerializationVersion: 94
+  SerializationVersion: 95
 }

@@ -15,6 +15,8 @@ Objects {
     }
   }
   ChildIds: 7367735074338159388
+  ChildIds: 12436081091816496539
+  ChildIds: 16802370949385954946
   ChildIds: 16813558807825262224
   ChildIds: 14713340454944924967
   ChildIds: 10005074784157121906
@@ -142,10 +144,6 @@ Objects {
           Name: "Rotation"
           Rotator {
           }
-        }
-        Overrides {
-          Name: "cs:PlayerNameColorMode"
-          String: "STATIC"
         }
       }
     }
@@ -837,6 +835,112 @@ Objects {
   PlayerSpawnPoint {
     TeamInt: 1
     PlayerScaleMultiplier: 1
+  }
+}
+Objects {
+  Id: 16802370949385954946
+  Name: "Advanced Bloom Post Process"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  UnregisteredParameters {
+    Overrides {
+      Name: "bp:Intensity"
+      Float: 0
+    }
+    Overrides {
+      Name: "bp:Threshold"
+      Float: -1
+    }
+    Overrides {
+      Name: "bp:Size Scale"
+      Float: 2
+    }
+    Overrides {
+      Name: "bp:Unbounded"
+      Bool: true
+    }
+    Overrides {
+      Name: "bp:Blend Weight"
+      Float: 1
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 2406418769746049312
+    }
+    TeamSettings {
+    }
+  }
+}
+Objects {
+  Id: 12436081091816496539
+  Name: "Motion Blur Post Process"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  UnregisteredParameters {
+    Overrides {
+      Name: "bp:Intensity"
+      Float: 0
+    }
+    Overrides {
+      Name: "bp:Max"
+      Float: 0
+    }
+    Overrides {
+      Name: "bp:Per Object Amount"
+      Float: 0
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Blueprint {
+    BlueprintAsset {
+      Id: 1359891466293640101
+    }
+    TeamSettings {
+    }
   }
 }
 Objects {
