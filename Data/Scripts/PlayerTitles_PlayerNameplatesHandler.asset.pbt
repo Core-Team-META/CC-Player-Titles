@@ -1,30 +1,13 @@
 Assets {
-  Id: 7413998381598010577
-  Name: "PlayerTitles_PlayerNameplates"
+  Id: 253626450268900290
+  Name: "PlayerTitles_PlayerNameplatesHandler"
   PlatformAssetType: 3
   TextAsset {
     CustomParameters {
       Overrides {
-        Name: "cs:PlayerTitles"
-        AssetReference {
-          Id: 3431212880695983395
-        }
-      }
-      Overrides {
-        Name: "cs:NameplateTemplate"
+        Name: "cs:PlayerNameplate"
         AssetReference {
           Id: 15277772879526424872
-        }
-      }
-      Overrides {
-        Name: "cs:PlayerNameplates"
-        ObjectReference {
-        }
-      }
-      Overrides {
-        Name: "cs:SocketPositionTemplate"
-        AssetReference {
-          Id: 799365241416341159
         }
       }
       Overrides {

@@ -19,6 +19,7 @@ local PlayerTitles = require(script:GetCustomProperty("PlayerTitles"))
 local PlayerNameplates = script:GetCustomProperty("PlayerNameplates"):WaitForObject()
 local NameplateTemplate = script:GetCustomProperty("NameplateTemplate")
 local SocketPositionTemplate = script:GetCustomProperty("SocketPositionTemplate")
+local clampIcon = script:GetCustomProperty("ClampIcon")
 
 local LocalPlayer = Game.GetLocalPlayer()
 
@@ -75,24 +76,48 @@ local function FindPlayerByName(playerName)
 	end
 end
 
-local function SetIcon(player, number, imageId, color)
+local function WaitFor(object)
+	while object == nil do
+		Task.Wait(1)
+	end
+end
+
+local function SetIcon(player, number, assetId)
+	WaitFor(nameplatesIcons[player])
+	-- test
 	if player == nil then error("Player is nil.") end
-	if imageId ~= nil then if type(imageId) ~= "string" then error("Argument imageId must be a string or nil.") end end
+	if assetId ~= nil then if assetId ~= -7 then if type(assetId) ~= "string" then error("Argument imageId must be a string or nil.") end end end
 	if type(number) ~= "number" then error("Argument number must be a number.") end
-	number = #nameplatesIcons[player] - number + 1
-	print(number)
+	number = #nameplatesIcons[player] - number + 1 -- convert number from range 1->cap to cap<-1
 	if not nameplatesIcons[player][number] then error("Icon number (" .. tostring(number) .. ") outside of range.") end
-	if imageId == nil then
+	-- set
+	nameplatesIcons[player][number]:SetColor(Color.WHITE)
+	if assetId == nil then
 		nameplatesIcons[player][number].visibility = Visibility.FORCE_OFF
+	elseif assetId == -7 then
+		nameplatesIcons[player][number]:SetImage(clampIcon)
+		nameplatesIcons[player][number].rotationAngle = 90
+		nameplatesIcons[player][number].width = 20
+		nameplatesIcons[player][number].height = 80
+		nameplatesIcons[player][number].visibility = Visibility.INHERIT
 	else
-		if color then
-			nameplatesIcons[player][number]:SetColor(color)
-		end
-		nameplatesIcons[player][number]:SetImage(imageId)
+		nameplatesIcons[player][number]:SetImage(assetId)
+		nameplatesIcons[player][number].rotationAngle = 0
+		nameplatesIcons[player][number].width = 100
+		nameplatesIcons[player][number].height = 100
 		nameplatesIcons[player][number].visibility = Visibility.INHERIT
 	end
 end
 Events.Connect("PlayerTitles_setIconEvent", SetIcon)
+
+local function SetIconColor(player, number, color)
+	WaitFor(nameplatesIcons[player])
+	if player == nil then error("Player is nil.") end
+	if type(number) ~= "number" then error("Argument number must be a number.") end
+	number = #nameplatesIcons[player] - number + 1 -- convert number from range 1->cap to cap<-1
+	nameplatesIcons[player][number]:SetColor(color)
+end
+Events.Connect("PlayerTitles_setIconColorEvent", SetIconColor)
 
 --	nil OnPlayerJoined(Player)
 --	Creates a nameplate for a player
