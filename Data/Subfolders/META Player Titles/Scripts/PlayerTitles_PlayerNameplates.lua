@@ -386,7 +386,6 @@ local function Update(nameplate)
 		end
 		for i = 1, count do
 			local key = keys[i]
-			print(player.name, key)
 			if key ~= "#" then -- ellipsis
 				if key ~= nil then -- disable
 					if not IconAssets[key] then warn("This icon (" .. tostring(key) .. ") doesn't have a corresponding icon asset! Add it in the Nameplate Icon Assets module.") end

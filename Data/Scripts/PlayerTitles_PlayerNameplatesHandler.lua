@@ -115,13 +115,13 @@ local function OnPlayerJoined(player)
 	iconData[player]:SetNetworkedCustomProperty("Data", s)
 	iconData[player].name = tostring(player.id)
 	iconList[player] = {}
-	
+
 	-- spawns (count) icons with durations in range 0 to (length) seconds for networking tests
 	do -- test
 		local count = 50
 		local length = 10
 		for i = 1, count do
-			_G.PlayerTitles.AddIcon(player, i%5 ~= 0 and (i%2 == 0 and "Abc" or "Bca") or "Cab", length*i/count)
+			_G.PlayerTitles.AddIcon(player, i%5 ~= 0 and (i%2 == 0 and "ShieldEffect" or "BowEffect") or "PoisonEffect", length*i/count)
 		end
 	end
 end

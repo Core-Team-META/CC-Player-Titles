@@ -5,49 +5,49 @@ Assets {
   TextAsset {
     CustomParameters {
       Overrides {
-        Name: "cs:Abc"
+        Name: "cs:BowEffect"
         AssetReference {
-          Id: 9785765900494749937
+          Id: 6245678116597982177
         }
       }
       Overrides {
-        Name: "cs:Bca"
+        Name: "cs:ShieldEffect"
         AssetReference {
-          Id: 1600077725526083080
+          Id: 15715523898285143894
         }
       }
       Overrides {
-        Name: "cs:Cab"
+        Name: "cs:PoisonEffect"
         AssetReference {
-          Id: 6877867718075406029
+          Id: 10996641438320823944
         }
       }
     }
     Assets {
-      Id: 9785765900494749937
-      Name: "Icon mouse"
+      Id: 6245678116597982177
+      Name: "Fantasy Ability Green 002"
       PlatformAssetType: 9
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
-        AssetId: "Icon_Mouse"
+        AssetId: "UI_Fantasy_Ability_Green_002"
       }
     }
     Assets {
-      Id: 1600077725526083080
-      Name: "Icon Controller"
+      Id: 15715523898285143894
+      Name: "Fantasy Ability Blue 051"
       PlatformAssetType: 9
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
-        AssetId: "Icon_Controller"
+        AssetId: "UI_Fantasy_Ability_Blue_051"
       }
     }
     Assets {
-      Id: 6877867718075406029
-      Name: "Icon Joystick"
+      Id: 10996641438320823944
+      Name: "Fantasy Ability Green 038"
       PlatformAssetType: 9
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
-        AssetId: "Icon_Joystick"
+        AssetId: "UI_Fantasy_Ability_Green_038"
       }
     }
   }

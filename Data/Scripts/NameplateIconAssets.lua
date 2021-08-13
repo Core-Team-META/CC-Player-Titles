@@ -28,13 +28,11 @@ end
 
 do	-- \/ your assets go here
 
-	--	example:
-	--	(after adding a property "debuff1" (asset reference (brush)) to the script)
-	--		AddIconAsset("debuff1", Color.New(1, 0, 0))
-
-	AddIconAsset("Abc", Color.GREEN)
-	AddIconAsset("Bca", Color.RED)
-	AddIconAsset("Cab", Color.BLUE)
+	-- here are some predefined example icons:
+	
+	AddIconAsset("PoisonEffect", Color.GREEN)
+	AddIconAsset("ShieldEffect")
+	AddIconAsset("BowEffect")
 
 end	-- /\ your assets go here
 return Module
