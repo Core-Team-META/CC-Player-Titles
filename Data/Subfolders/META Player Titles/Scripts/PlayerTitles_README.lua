@@ -28,8 +28,8 @@
 		A "PlayerList" is a compact UI panel listing players and their corresponding teams and titles.
 
 3c.	Player Nameplates:
-		A "PlayerNameplate" is text above a player's head indicating their username, health, titles
-		(and icons for universal usage - those can be used for player effects (buffs, debuffs), inventory slot displays etc. Usage explained in the API section).
+		A "PlayerNameplate" is text above a player's head indicating their username, health, titles and icons.
+		Icons can be defined in the NameplateIconAssets script, and used through API functions defined in section 5.
 
 3d.	Scoreboard:
 		A "Scoreboard" is a large UI panel listing players and their corresponding teams and titles alongside additional
@@ -41,11 +41,18 @@
 		We are a friendly group of creators and players interested in the games and community on Core. Open to everyone,
 		regardless of your level of experience or interests.
 
-5.	(Advanced) API/Events:
-		These events can be fired through code in order to control certain aspects of this system.
-		Fire them with Events.Broadcast(...) from their respective context. Event parameters are listed next to event names.
+5.	(Advanced) API functions:
+		These functions can be accessed and called from the PlayerTitles table in _G (an environment specific table (separate for every client and the server))
+		like this:
+			_G.PlayerTitles.FunctionNameGoesHere()
 
-		[client context] "PlayerTitles_setIconEvent" (Player player, int number, string (Brush Asset MUID) imageId, Color color)
-			Sets one of the icons on a client-side nameplate of a player. Leave imageId as nil to remove the icon.
-			Color sets the icon color. Number is the index of the icon under the nameplate in range (1 - icon frame count (in the PlayerNamePlate template)).
+		[server] AddIcon (Player player, string iconAssetId, [number duration])
+			Creates an icon on a player's nameplate that will be replicated across all clients.
+			The iconAssetId parameter is one of the icon asset names defined in NameplateIconAssets. This icon asset will be used for the new icon.
+			The duration parameter is optional and defines the time in seconds before the icon automatically disappears.
+			Returns a string containing the id of the icon (not icon asset) for use with RemoveIcon.
+
+		[server] RemoveIcon (Player player, string id)
+			Removes an icon previously created with AddIcon.
+			Parameter id is the string icon id returned from AddIcon.
 --]]

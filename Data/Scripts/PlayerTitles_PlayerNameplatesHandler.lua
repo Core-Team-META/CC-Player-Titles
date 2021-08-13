@@ -1,55 +1,10 @@
-local nameplateTemplate = script:GetCustomProperty("PlayerNameplate")
-local clampIcon = script:GetCustomProperty("ClampIcon")
-
+local templateIconData = script:GetCustomProperty("IconData")
+local iconData = {}
 local iconList = {}
 
-local iconCount = 0
-do
-	local nameplate = World.SpawnAsset(nameplateTemplate)
-	iconCount = #nameplate:FindDescendantsByName("Icon Frame")
-	nameplate:Destroy()
-end
+local iconCount = nil
 
 local needToUpdate = false
-
--- event queue
-local QUEUE_DELAY = 0.25
-local queueWait = 0
-local queue = {}
-
-local function Info(message)
-	print("PlayerTitles (PlayerNameplates)-" .. (Environment.IsClient() and "Client" or "Server") .. " | " .. message)
-end
-
--- adds events to the queue
-local function QueueAdd(name, data1, data2, data3)
-	queue[#queue+1] = {event = name, data1 = data1, data2 = data2, data3 = data3}
-end
-
--- processes and sends events from the queue
-local function QueueProcess(dt)
-	if #queue > 0 then
-		if queueWait <= 0 then
-			local result = Events.BroadcastToAllPlayers(queue[1].event, queue[1].data1, queue[1].data2, queue[1].data3)
-			local retry = false -- on fail
-			if result ~= BroadcastEventResultCode.SUCCESS then
-				queueWait = QUEUE_DELAY
-				if result ~= BroadcastEventResultCode.EXCEEDED_RATE_WARNING_LIMIT then
-					retry = true
-					Info("(" .. queue[1].event .. ") Retrying in " .. tostring(queueWait) .. " s.")
-				else
-					queueWait = QUEUE_DELAY*2
-				end
-			end
-			-- on success
-			if not retry then
-				table.remove(queue, 1)
-			end
-		else
-			queueWait = queueWait - dt
-		end
-	end
-end
 
 local lastList = nil
 local function UpdateIcons()
@@ -70,48 +25,45 @@ local function UpdateIcons()
 		for k, v in pairs(iconList[p]) do
 			i = i + 1
 			if i <= iconCount then
-				list[p][i] = {assetId = v.assetId, color = v.color}
+				list[p][i] = {iconAssetId = v.iconAssetId}
 			end
 		end
 		if i > iconCount then
-			list[p][8].assetId = -7
-			list[p][iconCount].color = nil
+			list[p][8].iconAssetId = "#"
 		end
 	end
-	for i = 1, iconCount do
-		for p, _ in pairs(list) do
-			-- test delta.
+	for p, _ in pairs(list) do
+		local delta = false
+		for i = 1, iconCount do
+		-- test delta.
 			-- this pass checks if theres anything thats changed in this slot.
 			-- this is to avoid sending unnecessary networked broadcasts.
-			local delta = false
-			local deltaIcon = false
-			local deltaColor = false
 			local current = list[p][i]
 			local old = lastList[p] and lastList[p][i]
-			if (old == nil or current == nil) and old ~= current then
-				delta = true
-				deltaIcon = true
-				deltaColor = true
-			end
+			if (old == nil or current == nil) and old ~= current then delta = true end
 			if not delta then
 				if old and current then
-					if old.assetId ~= current.assetId then delta = true deltaIcon = true end
-					if old.color ~= current.color then delta = true deltaColor = true end
+					if old.iconAssetId ~= current.iconAssetId then delta = true end
 				end
 			end
-			-- broadcast if delta passed
-			if delta == true then
-				if deltaIcon == true then 
-					QueueAdd("PlayerTitles_setIconEvent", p, i, list[p][i] and list[p][i].assetId)
-				end
-				if list[p][i] then
-					if list[p][i].color then
-						if deltaColor == true then 
-							QueueAdd("PlayerTitles_setIconColorEvent", p, i, list[p][i].color)
-						end
-					end
-				end
+			if delta then break end
+		end
+		-- broadcast if delta passed
+		if delta then
+			local data = iconData[p]:GetCustomProperty("Data")
+			local keys = {}
+			local i = 0
+			for key in string.gmatch(data, "[^%:]+") do
+				i = i + 1
+				keys[i] = key
 			end
+			local s = ""
+			for i = 1, iconCount do
+				local current = list[p][i]
+				keys[i] = current and (current.iconAssetId or "") or ""
+				s = s .. tostring(keys[i]) .. ":"
+			end
+			iconData[p]:SetNetworkedCustomProperty("Data", string.sub(s, 1, string.len(s)-1))
 		end
 	end
 	needToUpdate = false
@@ -119,16 +71,16 @@ local function UpdateIcons()
 	list = nil
 end
 
-_G.PlayerTitles = {}
+if not _G.PlayerTitles then _G.PlayerTitles = {} end
 _G.PlayerTitles.AddIcon = (
-	function(player, assetId, color, duration)
+	function(player, iconAssetId, duration)
 		-- get unique id
 		local id
 		repeat
 			id = math.random()
 		until iconList[player][id] == nil
 		-- add to list and return id
-		iconList[player][id] = {assetId = assetId, color = color, duration = tonumber(duration)}
+		iconList[player][id] = {iconAssetId = iconAssetId, duration = tonumber(duration)}
 		needToUpdate = true
 		return id
 	end
@@ -144,8 +96,38 @@ _G.PlayerTitles.RemoveIcon = (
 	end
 )
 
+local function LoadIconCount()
+	while iconCount == nil do
+		if _G.PlayerTitles then
+			iconCount = _G.PlayerTitles.iconCount
+		end
+		Task.Wait(0.2)
+	end
+end
+
+local function OnPlayerJoined(player)
+	iconData[player] = World.SpawnAsset(templateIconData, {parent = script.parent})
+	LoadIconCount()
+	local s = ""
+	for i = 1, iconCount-1 do
+		s = s .. ":"
+	end
+	iconData[player]:SetNetworkedCustomProperty("Data", s)
+	iconData[player].name = tostring(player.id)
+	iconList[player] = {}
+	
+	-- spawns (count) icons with durations in range 0 to (length) seconds for networking tests
+	do -- test
+		local count = 50
+		local length = 10
+		for i = 1, count do
+			_G.PlayerTitles.AddIcon(player, i%5 ~= 0 and (i%2 == 0 and "Abc" or "Bca") or "Cab", length*i/count)
+		end
+	end
+end
+Game.playerJoinedEvent:Connect(OnPlayerJoined)
+
 function Tick(dt)
-	QueueProcess(dt)
 	for p, _ in pairs(iconList) do
 		for k, v in pairs(iconList[p]) do
 			if v.duration then
@@ -163,13 +145,3 @@ function Tick(dt)
 		UpdateIcons()
 	end
 end
-
-local function OnPlayerJoined(player)
-	iconList[player] = {}
-	-- FOR TESTING \/
-	-- spawns 5000 icons for networking load testing
-	for i = 1, 5000 do
-		_G.PlayerTitles.AddIcon(player, clampIcon, Color.New(math.random(), math.random(), math.random()), math.random()*8)
-	end
-end
-Game.playerJoinedEvent:Connect(OnPlayerJoined)

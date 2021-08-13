@@ -1,13 +1,13 @@
 Assets {
-  Id: 253626450268900290
-  Name: "PlayerTitles_PlayerNameplatesHandler"
+  Id: 2936221436643117847
+  Name: "PlayerTitles_PlayerNameplatesHelper"
   PlatformAssetType: 3
   TextAsset {
     CustomParameters {
       Overrides {
-        Name: "cs:IconData"
+        Name: "cs:PlayerNameplate"
         AssetReference {
-          Id: 832814938189886887
+          Id: 15277772879526424872
         }
       }
     }

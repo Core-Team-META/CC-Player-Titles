@@ -12,6 +12,7 @@
 --	EXTERNAL SCRIPTS AND APIS
 ------------------------------------------------------------------------------------------------------------------------
 local PlayerTitles = require(script:GetCustomProperty("PlayerTitles"))
+local IconAssets = require(script:GetCustomProperty("NameplateIconAssets"))
 
 ------------------------------------------------------------------------------------------------------------------------
 --	OBJECTS AND REFERENCES
@@ -51,6 +52,8 @@ local PLAYER_NAME_COLOR_MODES = { "STATIC", "TEAM", "TITLE" }
 
 local COLOR_DEFAULT = Color.New(1, 1, 1, 1)
 
+local NETWORKED_CONTEXT = script:GetCustomProperty("NetworkedContext"):WaitForObject()
+
 ------------------------------------------------------------------------------------------------------------------------
 --	INITIAL VARIABLES
 ------------------------------------------------------------------------------------------------------------------------
@@ -86,7 +89,7 @@ local function SetIcon(player, number, assetId)
 	WaitFor(nameplatesIcons[player])
 	-- test
 	if player == nil then error("Player is nil.") end
-	if assetId ~= nil then if assetId ~= -7 then if type(assetId) ~= "string" then error("Argument imageId must be a string or nil.") end end end
+	if assetId ~= nil then if assetId ~= "#" then if type(assetId) ~= "string" then error("Argument imageId must be a string or nil.") end end end
 	if type(number) ~= "number" then error("Argument number must be a number.") end
 	number = #nameplatesIcons[player] - number + 1 -- convert number from range 1->cap to cap<-1
 	if not nameplatesIcons[player][number] then error("Icon number (" .. tostring(number) .. ") outside of range.") end
@@ -94,7 +97,7 @@ local function SetIcon(player, number, assetId)
 	nameplatesIcons[player][number]:SetColor(Color.WHITE)
 	if assetId == nil then
 		nameplatesIcons[player][number].visibility = Visibility.FORCE_OFF
-	elseif assetId == -7 then
+	elseif assetId == "#" then
 		nameplatesIcons[player][number]:SetImage(clampIcon)
 		nameplatesIcons[player][number].rotationAngle = 90
 		nameplatesIcons[player][number].width = 20
@@ -108,7 +111,6 @@ local function SetIcon(player, number, assetId)
 		nameplatesIcons[player][number].visibility = Visibility.INHERIT
 	end
 end
-Events.Connect("PlayerTitles_setIconEvent", SetIcon)
 
 local function SetIconColor(player, number, color)
 	WaitFor(nameplatesIcons[player])
@@ -117,7 +119,6 @@ local function SetIconColor(player, number, color)
 	number = #nameplatesIcons[player] - number + 1 -- convert number from range 1->cap to cap<-1
 	nameplatesIcons[player][number]:SetColor(color)
 end
-Events.Connect("PlayerTitles_setIconColorEvent", SetIconColor)
 
 --	nil OnPlayerJoined(Player)
 --	Creates a nameplate for a player
@@ -371,6 +372,32 @@ local function Update(nameplate)
 		UpdateHealthColor(player, nameplate)
 		UpdateVisibility(player, nameplate)
 	--end
+
+	-- icons
+	local iconData = NETWORKED_CONTEXT:FindChildByName(tostring(player.id))
+	if iconData then
+		iconData = iconData:GetCustomProperty("Data")
+		local count = #nameplatesIcons[player]
+		local i = 0
+		local keys = {}
+		for key in string.gmatch(iconData, "[^%:]+") do
+			i = i + 1
+			keys[i] = key
+		end
+		for i = 1, count do
+			local key = keys[i]
+			print(player.name, key)
+			if key ~= "#" then -- ellipsis
+				if key ~= nil then -- disable
+					if not IconAssets[key] then warn("This icon (" .. tostring(key) .. ") doesn't have a corresponding icon asset! Add it in the Nameplate Icon Assets module.") end
+				end
+				SetIcon(player, i, IconAssets[key] and IconAssets[key].image or nil)
+			else
+				SetIcon(player, i, key)
+			end
+			SetIconColor(player, i, IconAssets[key] and IconAssets[key].color or Color.WHITE)
+		end
+	end
 end
 
 --	string GetProperty(string, table)

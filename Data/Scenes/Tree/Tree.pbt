@@ -53,7 +53,7 @@ Objects {
   ParentId: 4781671109827199097
   ChildIds: 7364970799497005641
   ChildIds: 9895417261880221728
-  ChildIds: 13811460426239445902
+  ChildIds: 230175225739957401
   ChildIds: 4212976027604403906
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -111,13 +111,9 @@ Objects {
   }
 }
 Objects {
-  Id: 13811460426239445902
+  Id: 230175225739957401
   Name: "PlayerNameplates (PlayerTitles)"
   Transform {
-    Location {
-    }
-    Rotation {
-    }
     Scale {
       X: 1
       Y: 1
@@ -125,314 +121,35 @@ Objects {
     }
   }
   ParentId: 12452964338378884784
-  ChildIds: 15796503600531096505
-  ChildIds: 4662459840980593354
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:PlayerNameColorMode"
-      String: "STATIC"
-    }
-    Overrides {
-      Name: "cs:PlayerNameColor"
-      Color {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-    }
-    Overrides {
-      Name: "cs:ShowPartyColor"
-      Bool: true
-    }
-    Overrides {
-      Name: "cs:PartyMemberColor"
-      Color {
-        G: 0.5
-        A: 1
-      }
-    }
-    Overrides {
-      Name: "cs:PartyLeaderColor"
-      Color {
-        R: 0.457000017
-        G: 0.687000036
-        A: 1
-      }
-    }
-    Overrides {
-      Name: "cs:ShowTitlePrefix"
-      Bool: true
-    }
-    Overrides {
-      Name: "cs:ShowAvatar"
-      Bool: true
-    }
-    Overrides {
-      Name: "cs:ShowHealth"
-      Bool: true
-    }
-    Overrides {
-      Name: "cs:ShowIcons"
-      Bool: true
-    }
-    Overrides {
-      Name: "cs:ShowOnSelf"
-      Bool: true
-    }
-    Overrides {
-      Name: "cs:ShowOnNeutrals"
-      Bool: true
-    }
-    Overrides {
-      Name: "cs:ShowOnFriendlies"
-      Bool: true
-    }
-    Overrides {
-      Name: "cs:ShowOnEnemies"
-      Bool: true
-    }
-    Overrides {
-      Name: "cs:NeutralHealthColor"
-      Color {
-        R: 0.00242821593
-        G: 0.212230787
-        B: 0.0168073755
-        A: 1
-      }
-    }
-    Overrides {
-      Name: "cs:FriendlyHealthColor"
-      Color {
-        R: 0.0152085144
-        G: 0.304987371
-        B: 0.896269679
-        A: 1
-      }
-    }
-    Overrides {
-      Name: "cs:EnemyHealthColor"
-      Color {
-        R: 0.904661477
-        G: 0.0561284944
-        B: 0.0368894525
-        A: 1
-      }
-    }
-    Overrides {
-      Name: "cs:PlayerNameColorMode:tooltip"
-      String: "Determines how player name colors will be shown on the playerlist | STATIC, TEAM, TITLE"
-    }
-    Overrides {
-      Name: "cs:PlayerNameColor:tooltip"
-      String: "The color to use for a player\'s username; only applicable if PlayerNameColorMode is STATIC"
-    }
-    Overrides {
-      Name: "cs:ShowHealth:tooltip"
-      String: "Determines if a player\'s health bar should be shown or not"
-    }
-    Overrides {
-      Name: "cs:ShowOnSelf:tooltip"
-      String: "Determines if a player can see their own nameplate or not"
-    }
-    Overrides {
-      Name: "cs:ShowOnNeutrals:tooltip"
-      String: "Determines if a player can see neutral nameplates"
-    }
-    Overrides {
-      Name: "cs:ShowOnFriendlies:tooltip"
-      String: "Determines if a player can see friendly nameplates"
-    }
-    Overrides {
-      Name: "cs:ShowOnEnemies:tooltip"
-      String: "Determines if a player can see enemy nameplates"
-    }
-    Overrides {
-      Name: "cs:NeutralHealthColor:tooltip"
-      String: "The color to use for anyone on team 0 (neutral)"
-    }
-    Overrides {
-      Name: "cs:FriendlyHealthColor:tooltip"
-      String: "The color to use for anyone on the same team as the Local Player"
-    }
-    Overrides {
-      Name: "cs:EnemyHealthColor:tooltip"
-      String: "The color to use for anyone not on the same team as the Local Player or is on team 255 (Free for All)"
-    }
-    Overrides {
-      Name: "cs:ShowPartyColor:tooltip"
-      String: "Determines whether to color names of players belonging to the same party differently."
-    }
-    Overrides {
-      Name: "cs:PartyMemberColor:tooltip"
-      String: "The color used to highlight names of members of the same party."
-    }
-    Overrides {
-      Name: "cs:PartyLeaderColor:tooltip"
-      String: "The color used to highlight the name of the party leader if the party is public."
-    }
-  }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Visible_v2 {
     Value: "mc:evisibilitysetting:inheritfromparent"
   }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Folder {
-    IsGroup: true
-  }
-  InstanceHistory {
-    SelfId: 13811460426239445902
-    SubobjectId: 5332119631449535659
-    InstanceId: 230175225739957401
-    TemplateId: 16342529189706795690
-    WasRoot: true
-  }
-}
-Objects {
-  Id: 4662459840980593354
-  Name: "ServerContext"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 13811460426239445902
-  ChildIds: 16655756365553959014
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  NetworkContext {
-    Type: Server
-  }
-}
-Objects {
-  Id: 16655756365553959014
-  Name: "PlayerTitles_PlayerNameplatesHandler"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 4662459840980593354
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Script {
-    ScriptAsset {
-      Id: 253626450268900290
-    }
-  }
-}
-Objects {
-  Id: 15796503600531096505
-  Name: "ClientContext"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 13811460426239445902
-  ChildIds: 7258246456691516666
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:forceoff"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:forceoff"
-  }
-  NetworkContext {
-  }
-  InstanceHistory {
-    SelfId: 15796503600531096505
-    SubobjectId: 3272745622442376348
-    InstanceId: 230175225739957401
-    TemplateId: 16342529189706795690
-  }
-}
-Objects {
-  Id: 7258246456691516666
-  Name: "PlayerTitles_PlayerNameplates"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 15796503600531096505
-  UnregisteredParameters {
-    Overrides {
-      Name: "cs:PlayerNameplates"
-      ObjectReference {
-        SelfId: 13811460426239445902
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 5332119631449535659
+      value {
+        Overrides {
+          Name: "Name"
+          String: "PlayerNameplates (PlayerTitles)"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
       }
     }
-  }
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Script {
-    ScriptAsset {
-      Id: 7413998381598010577
+    TemplateAsset {
+      Id: 16342529189706795690
     }
-  }
-  InstanceHistory {
-    SelfId: 7258246456691516666
-    SubobjectId: 10586040963587922911
-    InstanceId: 230175225739957401
-    TemplateId: 16342529189706795690
   }
 }
 Objects {

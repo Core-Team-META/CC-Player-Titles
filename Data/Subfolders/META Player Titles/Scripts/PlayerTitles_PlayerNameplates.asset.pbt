@@ -11,6 +11,12 @@ Assets {
         }
       }
       Overrides {
+        Name: "cs:NameplateIconAssets"
+        AssetReference {
+          Id: 16655260642069252143
+        }
+      }
+      Overrides {
         Name: "cs:NameplateTemplate"
         AssetReference {
           Id: 15277772879526424872
@@ -18,6 +24,11 @@ Assets {
       }
       Overrides {
         Name: "cs:PlayerNameplates"
+        ObjectReference {
+        }
+      }
+      Overrides {
+        Name: "cs:NetworkedContext"
         ObjectReference {
         }
       }
