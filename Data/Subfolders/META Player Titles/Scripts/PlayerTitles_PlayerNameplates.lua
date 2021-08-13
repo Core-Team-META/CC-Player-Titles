@@ -96,18 +96,20 @@ local function SetIcon(player, number, assetId)
 	-- set
 	nameplatesIcons[player][number]:SetColor(Color.WHITE)
 	if assetId == nil then
-		nameplatesIcons[player][number].visibility = Visibility.FORCE_OFF
+		nameplatesIcons[player][number].parent.visibility = Visibility.FORCE_OFF
 	elseif assetId == "#" then
 		nameplatesIcons[player][number]:SetImage(clampIcon)
 		nameplatesIcons[player][number].rotationAngle = 90
 		nameplatesIcons[player][number].width = 20
 		nameplatesIcons[player][number].height = 80
+		nameplatesIcons[player][number].parent.visibility = Visibility.INHERIT
 		nameplatesIcons[player][number].visibility = Visibility.INHERIT
 	else
 		nameplatesIcons[player][number]:SetImage(assetId)
 		nameplatesIcons[player][number].rotationAngle = 0
 		nameplatesIcons[player][number].width = 100
 		nameplatesIcons[player][number].height = 100
+		nameplatesIcons[player][number].parent.visibility = Visibility.INHERIT
 		nameplatesIcons[player][number].visibility = Visibility.INHERIT
 	end
 end
