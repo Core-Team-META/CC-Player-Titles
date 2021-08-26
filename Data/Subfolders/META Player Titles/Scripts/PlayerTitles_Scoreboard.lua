@@ -70,6 +70,8 @@ local COLOR_DEFAULT = Color.New(1, 1, 1, 1)
 local LEADERSTAT_TYPES = { "KILLS", "DEATHS", "RESOURCE" }
 local PLAYER_NAME_COLOR_MODES = { "STATIC", "TEAM", "TITLE" }
 
+local DATA_HANDLER = Scoreboard:GetCustomProperty("DataHandler"):WaitForObject()
+
 ------------------------------------------------------------------------------------------------------------------------
 --	INITIAL VARIABLES
 ------------------------------------------------------------------------------------------------------------------------
@@ -82,6 +84,9 @@ local isVisible = false
 local leaderstatCount = 0
 
 local lastTask
+
+local defaultNameTextX
+local defaultNameTextWidth
 
 ------------------------------------------------------------------------------------------------------------------------
 --	LOCAL FUNCTIONS
@@ -174,6 +179,9 @@ local function CreatePlayerEntry(player)
 	teamColorImage:SetColor(teamColor)
 
 	playerIconImage:SetPlayerProfile(player)
+
+	defaultNameTextX = playerNameText.x
+	defaultNameTextWidth = playerNameText.width
 
 	if(SHOW_TITLE_ICON and title and title.icon) then
 		socialIconImage:SetImage(title.icon or "")
@@ -269,10 +277,37 @@ local function UpdatePlayerEntry(player)
 	local teamColor = PlayerTitles.GetPlayerTeamColor(LocalPlayer, player, NEUTRAL_TEAM_COLOR, FRIENDLY_TEAM_COLOR, ENEMY_TEAM_COLOR)
 	teamColorImage:SetColor(teamColor)
 
+	local data = DATA_HANDLER:FindChildByName(tostring(player.id))
+	local customTitleColor
+	local setCustomIcon
+	if data then
+		customTitleColor = data:GetCustomProperty("TitleColor")
+		setCustomIcon = (data:GetCustomProperty("Title") ~= "")
+		if SHOW_TITLE_ICON then
+			local socialIconImage = entry:GetCustomProperty("SocialIcon"):WaitForObject()
+			if setCustomIcon then
+				socialIconImage.visibility = Visibility.FORCE_OFF
+				playerNameText.x = defaultNameTextX
+				playerNameText.width = defaultNameTextWidth
+			else
+				socialIconImage.visibility = Visibility.INHERIT
+				if title then
+					socialIconImage:SetImage(title.icon or "")
+					socialIconImage:SetColor(title.iconColor or COLOR_DEFAULT)
+					socialIconImage.rotationAngle = tonumber(title.iconRotation) or 0
+					socialIconImage.width = socialIconImage.width + (title.extraWidth or 0)
+					socialIconImage.height = socialIconImage.height + (title.extraHeight or 0)
+					playerNameText.x = defaultNameTextX + 26
+					playerNameText.width = defaultNameTextWidth - 26
+				end
+			end
+		end
+	end
+
 	if(PLAYER_NAME_COLOR_MODE == "TEAM") then
 		playerNameText:SetColor(teamColor)
 	elseif(title and PLAYER_NAME_COLOR_MODE == "TITLE") then
-		playerNameText:SetColor(title.prefixColor or Color.New(0.1, 0.1, 0.1))
+		playerNameText:SetColor((setCustomIcon and customTitleColor) or title.prefixColor or Color.New(0.1, 0.1, 0.1))
 	else
 		playerNameText:SetColor(PLAYER_NAME_COLOR)
 	end
@@ -343,6 +378,54 @@ local function OnBindingReleased(player, binding)
 	if(binding ~= TOGGLE_BINDING) then return end
 
 	ForceToggle()
+end
+
+local function UpdateHeaderPrefix()
+
+	local data = DATA_HANDLER:FindChildByName(tostring(LocalPlayer.id))
+	local customTitle = ""
+	local customTitleColor = COLOR_DEFAULT
+	local setCustomTitle = false
+	if data then
+		customTitle = data:GetCustomProperty("Title")
+		customTitleColor = data:GetCustomProperty("TitleColor")
+		setCustomTitle = (customTitle ~= "")
+		if SHOW_TITLE_ICON then
+			
+		end
+	end
+
+	if(SHOW_TITLE_ICON) then
+		if setCustomTitle then
+			HeaderSocialIcon.visibility = Visibility.FORCE_OFF
+			HeaderSocialPrefix.x = 10
+		else
+			if localPlayerTitle then
+				if localPlayerTitle.icon then
+					HeaderSocialIcon.visibility = Visibility.INHERIT
+					HeaderSocialIcon:SetImage(localPlayerTitle.icon or "")
+					HeaderSocialIcon:SetColor(localPlayerTitle.iconColor or COLOR_DEFAULT)
+					HeaderSocialIcon.rotationAngle = localPlayerTitle.iconRotation or 0
+					HeaderSocialIcon.width = HeaderSocialIcon.width + (localPlayerTitle.extraWidth or 0)
+					HeaderSocialIcon.height = HeaderSocialIcon.height + (localPlayerTitle.extraHeight or 0)
+			
+					HeaderSocialPrefix.x = 10 + 20 + 8
+				end
+			end
+		end
+	end
+	
+	if(SHOW_TITLE_PREFIX) then
+		if setCustomTitle then
+			HeaderSocialPrefix.text = customTitle or ""
+			HeaderSocialPrefix:SetColor(customTitleColor or COLOR_DEFAULT)
+		else
+			HeaderSocialPrefix:SetColor(localPlayerTitle and localPlayerTitle.prefixColor or COLOR_DEFAULT)
+			HeaderSocialPrefix.text = localPlayerTitle and localPlayerTitle.prefix or "Player"
+		end
+	else
+		HeaderSocialPrefix.text = "Player"
+	end
 end
 
 --	nil UpdatePlayer(Player)
@@ -441,6 +524,7 @@ function Tick()
 		UpdatePlayerEntry(player)
 		if(player == LocalPlayer) then
 			UpdateHeader()
+			UpdateHeaderPrefix()
 		end
 		--end
 	end
@@ -478,26 +562,5 @@ EASING_DIRECTION_OUT = EaseUI.EasingEquation[EASING_DIRECTION_OUT]
 
 HeaderPlayerName.text = LocalPlayer.name
 UpdateHeader()
-
-if(localPlayerTitle) then
-	if(SHOW_TITLE_ICON and localPlayerTitle.icon) then
-		HeaderSocialIcon:SetImage(localPlayerTitle.icon or "")
-		HeaderSocialIcon:SetColor(localPlayerTitle.iconColor or COLOR_DEFAULT)
-		HeaderSocialIcon.rotationAngle = localPlayerTitle.iconRotation or 0
-		HeaderSocialIcon.width = HeaderSocialIcon.width + (localPlayerTitle.extraWidth or 0)
-		HeaderSocialIcon.height = HeaderSocialIcon.height + (localPlayerTitle.extraHeight or 0)
-
-		HeaderSocialPrefix.x = HeaderSocialPrefix.x + 20 + 8
-	end
-
-	if(SHOW_TITLE_PREFIX) then
-		HeaderSocialPrefix.text = localPlayerTitle.prefix or ""
-		HeaderSocialPrefix:SetColor(localPlayerTitle.prefixColor or COLOR_DEFAULT)
-	else
-		HeaderSocialPrefix.text = "Player"
-	end
-else
-	HeaderSocialPrefix.text = "Player"
-end
-
+UpdateHeaderPrefix()
 CreateHeaderLeaderstats()

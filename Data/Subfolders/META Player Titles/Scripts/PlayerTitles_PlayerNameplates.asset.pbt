@@ -28,11 +28,6 @@ Assets {
         }
       }
       Overrides {
-        Name: "cs:NetworkedContext"
-        ObjectReference {
-        }
-      }
-      Overrides {
         Name: "cs:SocketPositionTemplate"
         AssetReference {
           Id: 799365241416341159
@@ -55,5 +50,5 @@ Assets {
       }
     }
   }
-  SerializationVersion: 95
+  SerializationVersion: 97
 }

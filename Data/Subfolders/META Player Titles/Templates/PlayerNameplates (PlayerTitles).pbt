@@ -17,9 +17,16 @@ Assets {
         }
         ParentId: 12452964338378884784
         ChildIds: 3272745622442376348
-        ChildIds: 7022725371912264555
-        ChildIds: 14728037665126732920
         UnregisteredParameters {
+          Overrides {
+            Name: "cs:DataHandler"
+            ObjectReference {
+              SelfId: 2401492491060231969
+              SubObjectId: 14358248079085220076
+              InstanceId: 10567291690162417215
+              TemplateId: 12740505315917636334
+            }
+          }
           Overrides {
             Name: "cs:PlayerNameColorMode"
             String: "STATIC"
@@ -227,12 +234,6 @@ Assets {
               SubObjectId: 5332119631449535659
             }
           }
-          Overrides {
-            Name: "cs:NetworkedContext"
-            ObjectReference {
-              SubObjectId: 7022725371912264555
-            }
-          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -249,139 +250,6 @@ Assets {
           }
         }
       }
-      Objects {
-        Id: 7022725371912264555
-        Name: "NetworkedContext"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 5332119631449535659
-        ChildIds: 1258323653334548291
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Folder {
-          IsFilePartition: true
-          FilePartitionName: "NetworkedContext"
-        }
-      }
-      Objects {
-        Id: 1258323653334548291
-        Name: "PlayerTitles_PlayerNameplatesHandler"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 7022725371912264555
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Script {
-          ScriptAsset {
-            Id: 253626450268900290
-          }
-        }
-      }
-      Objects {
-        Id: 14728037665126732920
-        Name: "ServerContext"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 5332119631449535659
-        ChildIds: 3767331462077512822
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        NetworkContext {
-          Type: Server
-        }
-      }
-      Objects {
-        Id: 3767331462077512822
-        Name: "PlayerTitles_PlayerNameplatesHelper"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 14728037665126732920
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Script {
-          ScriptAsset {
-            Id: 2936221436643117847
-          }
-        }
-      }
     }
     PrimaryAssetId {
       AssetType: "None"
@@ -391,6 +259,6 @@ Assets {
   Marketplace {
     Description: "Player Titles allows game creators to give special roles to themselves, dedicated players, and anyone they deem fit for recognition. With a simple module it\'s easy to dictate and customize a hierarchy of roles. A set of user interface components shows this special recognition for everyone: playerlist, scoreboard, and nameplate.\r\n\r\nIncludes:\r\n\342\200\242 PlayerTitles - This contains all of the possible social titles and their respective assignments. More documentation can be found in the script itself.\r\n\342\200\242 PlayerList - A compact UI panel listing players and their corresponding teams and titles.\r\n\342\200\242 Player Nameplates - Text above a player\'s head indicating their username, health, and titles.\r\n\342\200\242 Scoreboard - A large UI panel listing players and their corresponding teams and titles alongside additional stats such as kills, deaths, or even resources.\r\n\r\nCreated by @NicholasForeman of Team META\r\nMessage @Buckmonster or @NicholasForeman in Discord with feedback or feature requests - https://discord.com/invite/core-creators\r\n\r\nMake sure to read the PlayerTitles_README file for setup and configuration instructions\r\n\r\nMany thanks to:\r\n\342\200\242 @standardcombo for review and documentation template\r\n\342\200\242 @Aggripina for thumbnail design\r\n\r\nUPDATE 1.0.6:\r\n1) Change Leaderstats from custom property to a group within the Scoreboard\r\n\r\nUPDATE 1.0.5:\r\n1) Attempted fix to nameplates randomly breaking\r\n\r\nUPDATE 1.0.4:\r\n1) Altered thumbnail to emphasise the nameplates (by @Aggripina)\r\n\r\nUPDATE 1.0.3:\r\n1) Altered thumbnail to emphasise the nameplates (by @Aggripina)\r\n\r\nUPDATE 1.0.2:\r\n1) Fix Damage Bug with PlayerTitles\r\n2) Fix PlayerNameColorMode ToolTip showing SOCIAL_STATUS instead of TITLE\r\n3) Improve README, Documentation for files, and Comments"
   }
-  SerializationVersion: 95
+  SerializationVersion: 97
   DirectlyPublished: true
 }

@@ -1,6 +1,7 @@
-local templateIconData = script:GetCustomProperty("IconData")
-local iconData = {}
+local templatePlayerNameplateData = script:GetCustomProperty("PlayerNameplateData")
+local nameplateData = {}
 local iconList = {}
+local customTitles = {}
 
 local iconCount = nil
 
@@ -33,9 +34,9 @@ local function UpdateIcons()
 		end
 	end
 	for p, _ in pairs(list) do
+		-- test delta
 		local delta = false
 		for i = 1, iconCount do
-		-- test delta.
 			-- this pass checks if theres anything thats changed in this slot.
 			-- this is to avoid sending unnecessary networked broadcasts.
 			local current = list[p][i]
@@ -50,7 +51,7 @@ local function UpdateIcons()
 		end
 		-- broadcast if delta passed
 		if delta then
-			local data = iconData[p]:GetCustomProperty("Data")
+			local data = nameplateData[p]:GetCustomProperty("Icons")
 			local keys = {}
 			local i = 0
 			for key in string.gmatch(data, "[^%:]+") do
@@ -63,7 +64,7 @@ local function UpdateIcons()
 				keys[i] = current and (current.iconAssetId or "") or ""
 				s = s .. tostring(keys[i]) .. ":"
 			end
-			iconData[p]:SetNetworkedCustomProperty("Data", string.sub(s, 1, string.len(s)-1))
+			nameplateData[p]:SetNetworkedCustomProperty("Icons", string.sub(s, 1, string.len(s)-1))
 		end
 	end
 	needToUpdate = false
@@ -71,7 +72,20 @@ local function UpdateIcons()
 	list = nil
 end
 
+local function UpdateTitle(player)
+	local data = nameplateData[player]
+	if data then
+		if data:GetCustomProperty("Title") ~= (customTitles[player] and customTitles[player].title or "") then
+			data:SetNetworkedCustomProperty("Title", (customTitles[player] and customTitles[player].title or ""))
+		end
+		if data:GetCustomProperty("TitleColor") ~= (customTitles[player] and customTitles[player].color or Color.WHITE) then
+			data:SetNetworkedCustomProperty("TitleColor", (customTitles[player] and customTitles[player].color or Color.WHITE))
+		end
+	end
+end
+
 if not _G.PlayerTitles then _G.PlayerTitles = {} end
+
 _G.PlayerTitles.AddIcon = (
 	function(player, iconAssetId, duration)
 		-- get unique id
@@ -96,6 +110,19 @@ _G.PlayerTitles.RemoveIcon = (
 	end
 )
 
+_G.PlayerTitles.SetTitle = (
+	function(player, title, color)
+		customTitles[player] = {title = (title or ""), color = (color or Color.WHITE)}
+		UpdateTitle(player)
+	end
+)
+_G.PlayerTitles.ResetTitle = (
+	function(player)
+		customTitles[player] = nil
+		UpdateTitle(player)
+	end
+)
+
 local function LoadIconCount()
 	while iconCount == nil do
 		if _G.PlayerTitles then
@@ -106,15 +133,19 @@ local function LoadIconCount()
 end
 
 local function OnPlayerJoined(player)
-	iconData[player] = World.SpawnAsset(templateIconData, {parent = script.parent})
+	nameplateData[player] = World.SpawnAsset(templatePlayerNameplateData, {parent = script.parent})
 	LoadIconCount()
 	local s = ""
 	for i = 1, iconCount-1 do
 		s = s .. ":"
 	end
-	iconData[player]:SetNetworkedCustomProperty("Data", s)
-	iconData[player].name = tostring(player.id)
+	nameplateData[player]:SetNetworkedCustomProperty("Icons", s)
+	nameplateData[player].name = tostring(player.id)
 	iconList[player] = {}
+
+	_G.PlayerTitles.SetTitle(player, "Test title", Color.GREEN)
+	Task.Wait(1)
+	_G.PlayerTitles.ResetTitle(player)
 
 	-- spawns (count) icons with durations in range 0 to (length) seconds for networking tests
 	do -- test

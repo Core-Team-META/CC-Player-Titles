@@ -1,6 +1,6 @@
 Assets {
   Id: 2936221436643117847
-  Name: "PlayerTitles_PlayerNameplatesHelper"
+  Name: "PlayerTitles_PlayerTitlesHelper"
   PlatformAssetType: 3
   TextAsset {
     CustomParameters {
@@ -12,5 +12,5 @@ Assets {
       }
     }
   }
-  SerializationVersion: 95
+  SerializationVersion: 97
 }

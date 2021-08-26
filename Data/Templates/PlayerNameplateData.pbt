@@ -1,13 +1,13 @@
 Assets {
   Id: 832814938189886887
-  Name: "PlayerNameplateIconData"
+  Name: "PlayerNameplateData"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
       RootId: 2226863272403225802
       Objects {
         Id: 2226863272403225802
-        Name: "PlayerNameplateIconData"
+        Name: "PlayerNameplateData"
         Transform {
           Scale {
             X: 1
@@ -18,11 +18,32 @@ Assets {
         ParentId: 10891655658969867342
         UnregisteredParameters {
           Overrides {
-            Name: "cs:Data"
+            Name: "cs:Icons"
             String: ""
           }
           Overrides {
-            Name: "cs:Data:isrep"
+            Name: "cs:Title"
+            String: ""
+          }
+          Overrides {
+            Name: "cs:TitleColor"
+            Color {
+              R: 1
+              G: 1
+              B: 1
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "cs:Icons:isrep"
+            Bool: true
+          }
+          Overrides {
+            Name: "cs:TitleColor:isrep"
+            Bool: true
+          }
+          Overrides {
+            Name: "cs:Title:isrep"
             Bool: true
           }
         }
@@ -49,5 +70,5 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 95
+  SerializationVersion: 97
 }

@@ -52,7 +52,7 @@ local PLAYER_NAME_COLOR_MODES = { "STATIC", "TEAM", "TITLE" }
 
 local COLOR_DEFAULT = Color.New(1, 1, 1, 1)
 
-local NETWORKED_CONTEXT = script:GetCustomProperty("NetworkedContext"):WaitForObject()
+local DATA_HANDLER = PlayerNameplates:GetCustomProperty("DataHandler"):WaitForObject()
 
 ------------------------------------------------------------------------------------------------------------------------
 --	INITIAL VARIABLES
@@ -91,7 +91,7 @@ local function SetIcon(player, number, assetId)
 	if player == nil then error("Player is nil.") end
 	if assetId ~= nil then if assetId ~= "#" then if type(assetId) ~= "string" then error("Argument imageId must be a string or nil.") end end end
 	if type(number) ~= "number" then error("Argument number must be a number.") end
-	number = #nameplatesIcons[player] - number + 1 -- convert number from range 1->cap to cap<-1
+	number = #nameplatesIcons[player] - number + 1 -- convert number from 1->cap to cap<-1
 	if not nameplatesIcons[player][number] then error("Icon number (" .. tostring(number) .. ") outside of range.") end
 	-- set
 	nameplatesIcons[player][number]:SetColor(Color.WHITE)
@@ -122,6 +122,11 @@ local function SetIconColor(player, number, color)
 	nameplatesIcons[player][number]:SetColor(color)
 end
 
+local function UpdateNameplatePrefix(player, nameplate)
+	if(not Object.IsValid(nameplate)) then return end
+
+end
+
 --	nil OnPlayerJoined(Player)
 --	Creates a nameplate for a player
 local function OnPlayerJoined(player)
@@ -137,7 +142,7 @@ local function OnPlayerJoined(player)
 	nameplates[player] = nameplate
 	nameplatesResolution = nameplate:FindChildByType("UIContainer"):GetCanvasSize()
 
-	local nameText, prefixText, avatar, healthText, healthBar, healthBarOutline, playerIcons =
+	local nameText, titleText, avatar, healthText, healthBar, healthBarOutline, playerIcons =
 		nameplate:GetCustomProperty("Name"):WaitForObject(),
 		nameplate:GetCustomProperty("Prefix"):WaitForObject(),
 		nameplate:GetCustomProperty("Avatar"):WaitForObject(),
@@ -195,11 +200,11 @@ local function OnPlayerJoined(player)
 	end
 
 	if(SHOW_TITLE_PREFIX and title) then
-		prefixText.text = title.prefix or ""
-		prefixText:SetColor(title.prefixColor or Color.New(0.1, 0.1, 0.1))
-		prefixText.visibility = Visibility.INHERIT
+		titleText.text = title.prefix or ""
+		titleText:SetColor(title.prefixColor or Color.New(0.1, 0.1, 0.1))
+		titleText.visibility = Visibility.INHERIT
 	else
-		prefixText.visibility = Visibility.FORCE_OFF
+		titleText.visibility = Visibility.FORCE_OFF
 	end
 
 	local socketPosition = World.SpawnAsset(SocketPositionTemplate)
@@ -227,19 +232,19 @@ local function OnPlayerJoined(player)
 			end
 		else
 			nameText.y = nameText.y + avatar.height - 20 - 40
-			prefixText.y = prefixText.y + avatar.height + 200
-			prefixText.shouldWrapText = false
+			titleText.y = titleText.y + avatar.height + 200
+			titleText.shouldWrapText = false
 			if (SHOW_AVATAR) then
 				nameText.x = nameText.x + avatar.width + 20 + 20
-				prefixText.x = prefixText.x + avatar.width + 20 + 20
+				titleText.x = titleText.x + avatar.width + 20 + 20
 			else
 				nameText.x = 0
 				nameText.anchor = UIPivot.BOTTOM_CENTER
 				nameText.dock = UIPivot.BOTTOM_CENTER
-				prefixText.x = 0
-				prefixText.anchor = UIPivot.BOTTOM_CENTER
-				prefixText.dock = UIPivot.BOTTOM_CENTER
-				prefixText.justification = TextJustify.CENTER
+				titleText.x = 0
+				titleText.anchor = UIPivot.BOTTOM_CENTER
+				titleText.dock = UIPivot.BOTTOM_CENTER
+				titleText.justification = TextJustify.CENTER
 				nameText.justification = TextJustify.CENTER
 			end
 		end
@@ -375,10 +380,10 @@ local function Update(nameplate)
 		UpdateVisibility(player, nameplate)
 	--end
 
-	-- icons
-	local iconData = NETWORKED_CONTEXT:FindChildByName(tostring(player.id))
-	if iconData then
-		iconData = iconData:GetCustomProperty("Data")
+	local data = DATA_HANDLER:FindChildByName(tostring(player.id))
+	if data then
+		-- icons
+		local iconData = data:GetCustomProperty("Icons")
 		local count = #nameplatesIcons[player]
 		local i = 0
 		local keys = {}
@@ -398,6 +403,24 @@ local function Update(nameplate)
 			end
 			SetIconColor(player, i, IconAssets[key] and IconAssets[key].color or Color.WHITE)
 		end
+		-- titles
+		local defaultTitle = PlayerTitles.GetPlayerTitle(player)
+		local title = data:GetCustomProperty("Title")
+		local titleColor = data:GetCustomProperty("TitleColor")
+		local titleObject = nameplate:GetCustomProperty("Prefix"):WaitForObject()
+		titleColor = (title == "") and (defaultTitle and defaultTitle.prefixColor) or titleColor
+		if(SHOW_TITLE_PREFIX) then
+			if (title ~= "") or (defaultTitle and defaultTitle.prefix) then
+				titleObject.visibility = Visibility.INHERIT
+			else
+				titleObject.visibility = Visibility.FORCE_OFF
+			end
+		else
+			titleObject.visibility = Visibility.FORCE_OFF
+		end
+		title = (title == "") and (defaultTitle and defaultTitle.prefix) or title
+		titleObject.text = title
+		titleObject:SetColor(titleColor)
 	end
 end
 

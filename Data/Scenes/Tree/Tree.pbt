@@ -52,8 +52,9 @@ Objects {
   }
   ParentId: 4781671109827199097
   ChildIds: 7364970799497005641
+  ChildIds: 10567291690162417215
   ChildIds: 9895417261880221728
-  ChildIds: 230175225739957401
+  ChildIds: 1748165727878535860
   ChildIds: 4212976027604403906
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -103,6 +104,15 @@ Objects {
           Rotator {
           }
         }
+        Overrides {
+          Name: "cs:DataHandler"
+          ObjectReference {
+            SelfId: 10896462499632871146
+            SubObjectId: 8154168270004287783
+            InstanceId: 10567291690162417215
+            TemplateId: 12740505315917636334
+          }
+        }
       }
     }
     TemplateAsset {
@@ -111,7 +121,7 @@ Objects {
   }
 }
 Objects {
-  Id: 230175225739957401
+  Id: 1748165727878535860
   Name: "PlayerNameplates (PlayerTitles)"
   Transform {
     Scale {
@@ -145,6 +155,15 @@ Objects {
           Rotator {
           }
         }
+        Overrides {
+          Name: "cs:DataHandler"
+          ObjectReference {
+            SelfId: 10896462499632871146
+            SubObjectId: 8154168270004287783
+            InstanceId: 10567291690162417215
+            TemplateId: 12740505315917636334
+          }
+        }
       }
     }
     TemplateAsset {
@@ -171,6 +190,11 @@ Objects {
   }
   TemplateInstance {
     ParameterOverrideMap {
+      key: 800384977327773401
+      value {
+      }
+    }
+    ParameterOverrideMap {
       key: 7621446724159773466
       value {
         Overrides {
@@ -187,10 +211,61 @@ Objects {
           Rotator {
           }
         }
+        Overrides {
+          Name: "cs:DataHandler"
+          ObjectReference {
+            SelfId: 10896462499632871146
+            SubObjectId: 8154168270004287783
+            InstanceId: 10567291690162417215
+            TemplateId: 12740505315917636334
+          }
+        }
       }
     }
     TemplateAsset {
       Id: 10235496072373665773
+    }
+  }
+}
+Objects {
+  Id: 10567291690162417215
+  Name: "PlayerTitles"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 12452964338378884784
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 14358248079085220076
+      value {
+        Overrides {
+          Name: "Name"
+          String: "PlayerTitles"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 12740505315917636334
     }
   }
 }
@@ -802,6 +877,7 @@ Objects {
       CanMoveDown: true
       IsMountEnabled: true
       MaxHitpoints: 100
+      PlayerMasterVolumeMultiplier: 1
     }
   }
 }
