@@ -1054,7 +1054,8 @@ Objects {
         ChatMode {
         }
         ChatPosition {
-          X: 40
+          X: 20
+          Y: -20
         }
         ChatSize {
           X: 450
@@ -1064,7 +1065,7 @@ Objects {
           Value: "mc:ecorehorizontalalign:left"
         }
         ChatVerticalAlignment {
-          Value: "mc:ecorehorizontalalign:center"
+          Value: "mc:ecoreverticalalign:bottom"
         }
       }
       PhysicsSettings {
@@ -1089,7 +1090,7 @@ Objects {
       }
       VoiceChatSettings {
         VoiceChatMode {
-          Value: "mc:evoicechatmode:none"
+          Value: "mc:evoicechatmode:all"
         }
         VoiceChannelType {
           Value: "mc:evoicechanneltype:normal"
@@ -1105,7 +1106,7 @@ Objects {
           Y: 40
         }
         VoiceChatHorizontalAlignment {
-          Value: "mc:ecorehorizontalalign:right"
+          Value: "mc:ecorehorizontalalign:left"
         }
         VoiceChatVerticalAlignment {
           Value: "mc:ecoreverticalalign:top"

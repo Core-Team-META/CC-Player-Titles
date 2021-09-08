@@ -10,5 +10,5 @@ SerializationVersion: 1
 AllowDirectJoinAsChild: true
 SceneNameToSceneIdMap {
   key: "Main"
-  value: "cd4fc6454816412941d0ca8d17de5134"
+  value: "d21e049e425405e79e7e5c9940b9f6f1"
 }
