@@ -63,8 +63,6 @@ local COLOR_DEFAULT = Color.New(1, 1, 1, 1)
 
 local PLAYER_NAME_COLOR_MODES = { "STATIC", "TEAM", "TITLE" }
 
-local DATA_HANDLER = PlayerList:GetCustomProperty("DataHandler"):WaitForObject()
-
 ------------------------------------------------------------------------------------------------------------------------
 --	INITIAL VARIABLES
 ------------------------------------------------------------------------------------------------------------------------
@@ -193,33 +191,6 @@ local function UpdatePlayerEntry(player)
 	local teamColor = PlayerTitles.GetPlayerTeamColor(LocalPlayer, player, NEUTRAL_TEAM_COLOR, FRIENDLY_TEAM_COLOR, ENEMY_TEAM_COLOR)
 	teamColorImage:SetColor(teamColor)
 
-	local data = DATA_HANDLER:FindChildByName(tostring(player.id))
-	local customTitleColor
-	local setCustomIcon
-	if data then
-		customTitleColor = data:GetCustomProperty("TitleColor")
-		setCustomIcon = (data:GetCustomProperty("Title") ~= "")
-		if SHOW_TITLE_ICON then
-			local socialIconImage = entry:GetCustomProperty("SocialIcon"):WaitForObject()
-			if setCustomIcon then
-				socialIconImage.visibility = Visibility.FORCE_OFF
-				playerNameText.x = defaultNameTextX
-				playerNameText.width = defaultNameTextWidth
-			else
-				socialIconImage.visibility = Visibility.INHERIT
-				if title then
-					socialIconImage:SetImage(title.icon or "")
-					socialIconImage:SetColor(title.iconColor or COLOR_DEFAULT)
-					socialIconImage.rotationAngle = tonumber(title.iconRotation) or 0
-					socialIconImage.width = socialIconImage.width + (title.extraWidth or 0)
-					socialIconImage.height = socialIconImage.height + (title.extraHeight or 0)
-					playerNameText.x = defaultNameTextX + 26
-					playerNameText.width = defaultNameTextWidth - 26
-				end
-			end
-		end
-	end
-
 	if(PLAYER_NAME_COLOR_MODE == "TEAM") then
 		playerNameText:SetColor(teamColor)
 	elseif(title and (PLAYER_NAME_COLOR_MODE == "TITLE")) then
@@ -254,20 +225,6 @@ local function UpdatePlayerEntry(player)
 end
 
 local function UpdateHeaderPrefix()
-
-	local data = DATA_HANDLER:FindChildByName(tostring(LocalPlayer.id))
-	local customTitle = ""
-	local customTitleColor = COLOR_DEFAULT
-	local setCustomTitle = false
-	if data then
-		customTitle = data:GetCustomProperty("Title")
-		customTitleColor = data:GetCustomProperty("TitleColor")
-		setCustomTitle = (customTitle ~= "")
-		if SHOW_TITLE_ICON then
-			
-		end
-	end
-
 	if(SHOW_TITLE_ICON) then
 		if setCustomTitle then
 			HeaderSocialIcon.visibility = Visibility.FORCE_OFF

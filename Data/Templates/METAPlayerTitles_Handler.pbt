@@ -1,13 +1,13 @@
 Assets {
-  Id: 12740505315917636334
-  Name: "PlayerTitles"
+  Id: 16302603277956090916
+  Name: "METAPlayerTitles_Handler"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 14358248079085220076
+      RootId: 3919527880117986418
       Objects {
-        Id: 14358248079085220076
-        Name: "PlayerTitles"
+        Id: 3919527880117986418
+        Name: "METAPlayerTitles_Handler"
         Transform {
           Scale {
             X: 1
@@ -15,9 +15,20 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 12452964338378884784
-        ChildIds: 8154168270004287783
-        ChildIds: 15863571932841829520
+        ParentId: 10497177608845763861
+        ChildIds: 7142583767537185158
+        ChildIds: 1527551482373695837
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:Configurator"
+            ObjectReference {
+            }
+          }
+          Overrides {
+            Name: "cs:Configurator:tooltip"
+            String: "The configurator to use for this component."
+          }
+        }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -32,11 +43,12 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "METAPlayerTitles_Handler"
         }
       }
       Objects {
-        Id: 8154168270004287783
-        Name: "DataHandler"
+        Id: 7142583767537185158
+        Name: "METAPlayerTitles_Handler"
         Transform {
           Location {
           }
@@ -48,40 +60,27 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 14358248079085220076
-        ChildIds: 5912818792254004362
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Folder {
-          IsFilePartition: true
-        }
-      }
-      Objects {
-        Id: 5912818792254004362
-        Name: "PlayerTitles_PlayerTitlesHandler"
-        Transform {
-          Location {
+        ParentId: 3919527880117986418
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:RootFolder"
+            ObjectReference {
+              SubObjectId: 3919527880117986418
+            }
           }
-          Rotation {
+          Overrides {
+            Name: "cs:PlayerDataFolder"
+            ObjectReference {
+              SubObjectId: 12447878320999495226
+            }
           }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
+          Overrides {
+            Name: "cs:TitleDataFolder"
+            ObjectReference {
+              SubObjectId: 1864424743989800818
+            }
           }
         }
-        ParentId: 8154168270004287783
         WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -97,13 +96,13 @@ Assets {
         }
         Script {
           ScriptAsset {
-            Id: 253626450268900290
+            Id: 2308916199539966739
           }
         }
       }
       Objects {
-        Id: 15863571932841829520
-        Name: "ServerContext"
+        Id: 1527551482373695837
+        Name: "Session Data"
         Transform {
           Location {
           }
@@ -115,8 +114,9 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 14358248079085220076
-        ChildIds: 2597022995996167326
+        ParentId: 3919527880117986418
+        ChildIds: 12447878320999495226
+        ChildIds: 1864424743989800818
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -129,13 +129,14 @@ Assets {
         EditorIndicatorVisibility {
           Value: "mc:eindicatorvisibility:visiblewhenselected"
         }
-        NetworkContext {
-          Type: Server
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "Session Data"
         }
       }
       Objects {
-        Id: 2597022995996167326
-        Name: "PlayerTitles_PlayerTitlesHelper"
+        Id: 12447878320999495226
+        Name: "Player Data"
         Transform {
           Location {
           }
@@ -147,7 +148,8 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 15863571932841829520
+        ParentId: 1527551482373695837
+        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -160,10 +162,42 @@ Assets {
         EditorIndicatorVisibility {
           Value: "mc:eindicatorvisibility:visiblewhenselected"
         }
-        Script {
-          ScriptAsset {
-            Id: 2936221436643117847
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "Player Data"
+        }
+      }
+      Objects {
+        Id: 1864424743989800818
+        Name: "Title Data"
+        Transform {
+          Location {
           }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 1527551482373695837
+        WantsNetworking: true
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "Title Data"
         }
       }
     }
@@ -172,5 +206,5 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 97
+  SerializationVersion: 98
 }

@@ -1,13 +1,13 @@
 Assets {
-  Id: 799365241416341159
-  Name: "SocketPosition"
+  Id: 832814938189886887
+  Name: "METAPlayerTitles_PlayerSessionData"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 11434384080055974455
+      RootId: 2226863272403225802
       Objects {
-        Id: 11434384080055974455
-        Name: "SocketPosition"
+        Id: 2226863272403225802
+        Name: "METAPlayerTitles_PlayerSessionData"
         Transform {
           Scale {
             X: 1
@@ -15,7 +15,26 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 4781671109827199097
+        ParentId: 1433866654738697295
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:Icons"
+            String: ""
+          }
+          Overrides {
+            Name: "cs:OverrideTitle"
+            String: ""
+          }
+          Overrides {
+            Name: "cs:Icons:isrep"
+            Bool: true
+          }
+          Overrides {
+            Name: "cs:OverrideTitle:isrep"
+            Bool: true
+          }
+        }
+        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -38,5 +57,5 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 97
+  SerializationVersion: 98
 }

@@ -1,13 +1,13 @@
 Assets {
-  Id: 832814938189886887
-  Name: "PlayerNameplateData"
+  Id: 868964529713494123
+  Name: "METAPlayerTitles_ConfiguratorScore"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 2226863272403225802
+      RootId: 11625892347937029529
       Objects {
-        Id: 2226863272403225802
-        Name: "PlayerNameplateData"
+        Id: 11625892347937029529
+        Name: "METAPlayerTitles_ConfiguratorScore"
         Transform {
           Scale {
             X: 1
@@ -15,39 +15,29 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 10891655658969867342
+        ParentId: 12385130140791979254
         UnregisteredParameters {
           Overrides {
-            Name: "cs:Icons"
+            Name: "cs:UsePlayerResources"
+            Bool: true
+          }
+          Overrides {
+            Name: "cs:ValueSource"
             String: ""
           }
           Overrides {
-            Name: "cs:Title"
-            String: ""
-          }
-          Overrides {
-            Name: "cs:TitleColor"
-            Color {
-              R: 1
-              G: 1
-              B: 1
-              A: 1
-            }
-          }
-          Overrides {
-            Name: "cs:Icons:isrep"
+            Name: "cs:IsEnabled"
             Bool: true
           }
           Overrides {
-            Name: "cs:TitleColor:isrep"
-            Bool: true
+            Name: "cs:UsePlayerResources:tooltip"
+            String: "When set to true, the ValueSource property will use player resources. When its false, it will use keys from player objects (for example Player.name when it\'s set to name)."
           }
           Overrides {
-            Name: "cs:Title:isrep"
-            Bool: true
+            Name: "cs:ValueSource:tooltip"
+            String: "The string/key to use to access the value for this score. Check the UsePlayerResources property\'s tooltip for more info."
           }
         }
-        WantsNetworking: true
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -70,5 +60,5 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 97
+  SerializationVersion: 98
 }
