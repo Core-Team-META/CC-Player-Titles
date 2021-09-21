@@ -69,6 +69,14 @@ local playersDead = {}
 --	LOCAL FUNCTIONS
 ------------------------------------------------------------------------------------------------------------------------
 
+-- value interpolation over time with c as the difference parameter adjustable with delta time
+local function Approach(a, b, c, dt)
+	if dt then c = c * (dt*60) end
+	if a < b then a = a + c end
+	if a > b then a = a - c end
+	return a
+end
+
 --	Player FindPlayerByName(string)
 --	Finds a player in all players by string name
 local function FindPlayerByName(playerName)
@@ -120,11 +128,6 @@ local function SetIconColor(player, number, color)
 	if type(number) ~= "number" then error("Argument number must be a number.") end
 	number = #nameplatesIcons[player] - number + 1 -- convert number from range 1->cap to cap<-1
 	nameplatesIcons[player][number]:SetColor(color)
-end
-
-local function UpdateNameplatePrefix(player, nameplate)
-	if(not Object.IsValid(nameplate)) then return end
-
 end
 
 --	nil OnPlayerJoined(Player)
@@ -351,9 +354,30 @@ local function RotateNameplate(nameplate)
 	nameplate:SetWorldRotation(Rotation.New(quaternion))
 end
 
+local voiceChatTimer = 0
+local function UpdateVoiceChatVolume(player, nameplate, dt)
+	if (player == nil) then return end
+	if(not Object.IsValid(nameplate)) then return end
+	-- timer
+	if VoiceChat.IsPlayerSpeaking(player) then
+		voiceChatTimer = 2
+	end
+
+	local nameplateVoice = nameplate:GetCustomProperty("VoiceChat"):WaitForObject()
+	if voiceChatTimer > 0 then
+		nameplateVoice.visibility = Visibility.INHERIT
+		local nameplateVolume = nameplate:GetCustomProperty("VoiceChatVolume"):WaitForObject()
+		local v = nameplateVolume.width * VoiceChat.GetPlayerSpeakingVolume(player)
+		nameplateVolume.height = math.floor(Approach(nameplateVolume.height, v, math.abs(nameplateVolume.height - v)/5, dt))
+		voiceChatTimer = voiceChatTimer - dt
+	else
+		nameplateVoice.visibility = Visibility.FORCE_OFF
+	end
+end
+
 --	nil Update(CoreObject)
 --	Updates Rotation, Health, HealthColor, NameColor, and Visibility of a nameplate
-local function Update(nameplate)
+local function Update(nameplate, dt)
 	if(not Object.IsValid(nameplate)) then return end
 
 	RotateNameplate(nameplate)
@@ -378,6 +402,7 @@ local function Update(nameplate)
 		UpdatePlayerNameColor(player, nameplate)
 		UpdateHealthColor(player, nameplate)
 		UpdateVisibility(player, nameplate)
+		UpdateVoiceChatVolume(player, nameplate, dt)
 	--end
 
 	local data = DATA_HANDLER:FindChildByName(tostring(player.id))
@@ -442,10 +467,10 @@ end
 
 --	nil Tick(deltaTime)
 --	Updates all nameplates every frame
-function Tick()
+function Tick(dt)
 	for _, nameplate in pairs(nameplates) do
 		if(Object.IsValid(nameplate)) then
-			Update(nameplate)
+			Update(nameplate, dt)
 		end
 	end
 end

@@ -54,6 +54,18 @@ Assets {
               SubObjectId: 17734375531646041422
             }
           }
+          Overrides {
+            Name: "cs:VoiceChat"
+            ObjectReference {
+              SubObjectId: 16019286561327399074
+            }
+          }
+          Overrides {
+            Name: "cs:VoiceChatVolume"
+            ObjectReference {
+              SubObjectId: 13844838516601249381
+            }
+          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -87,6 +99,7 @@ Assets {
           }
         }
         ParentId: 4556864191231813099
+        ChildIds: 16019286561327399074
         ChildIds: 12568231521230207731
         ChildIds: 9757435098575255288
         ChildIds: 11212623188332449507
@@ -137,6 +150,265 @@ Assets {
             TargetAnchor {
               Anchor {
                 Value: "mc:euianchor:topleft"
+              }
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 16019286561327399074
+        Name: "Voice Chat"
+        Transform {
+          Location {
+            Z: -633.333313
+          }
+          Rotation {
+          }
+          Scale {
+            X: 6.66666651
+            Y: 6.66666651
+            Z: 6.66666651
+          }
+        }
+        ParentId: 411749650228164533
+        ChildIds: 7501827448248607106
+        ChildIds: 13844838516601249381
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Control {
+          Width: 200
+          Height: 200
+          UIY: -290
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          Image {
+            Brush {
+              Id: 4401681575779583927
+            }
+            Color {
+              A: 0.6
+            }
+            TeamSettings {
+            }
+            ShadowColor {
+              A: 1
+            }
+            ShadowOffset {
+            }
+            ScreenshotIndex: 1
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:bottomright"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:bottomright"
+              }
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 7501827448248607106
+        Name: "UI Image"
+        Transform {
+          Location {
+            Z: -633.333313
+          }
+          Rotation {
+          }
+          Scale {
+            X: 6.66666651
+            Y: 6.66666651
+            Z: 6.66666651
+          }
+        }
+        ParentId: 16019286561327399074
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Control {
+          Width: 150
+          Height: 150
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          Image {
+            Brush {
+              Id: 11379228949574851172
+            }
+            Color {
+              A: 1
+            }
+            TeamSettings {
+            }
+            ShadowColor {
+              A: 1
+            }
+            ShadowOffset {
+            }
+            ScreenshotIndex: 1
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:middlecenter"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:middlecenter"
+              }
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 13844838516601249381
+        Name: "Voice Chat Volume"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16019286561327399074
+        ChildIds: 5965561390750957864
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Control {
+          Width: 150
+          Height: 50
+          UIY: -25
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          Panel {
+            IsClipping: true
+            Opacity: 1
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:bottomcenter"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:bottomcenter"
+              }
+            }
+          }
+        }
+      }
+      Objects {
+        Id: 5965561390750957864
+        Name: "UI Image"
+        Transform {
+          Location {
+            Z: -633.333313
+          }
+          Rotation {
+          }
+          Scale {
+            X: 6.66666651
+            Y: 6.66666651
+            Z: 6.66666651
+          }
+        }
+        ParentId: 13844838516601249381
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Control {
+          Width: 150
+          Height: 150
+          RenderTransformPivot {
+            Anchor {
+              Value: "mc:euianchor:middlecenter"
+            }
+          }
+          Image {
+            Brush {
+              Id: 11379228949574851172
+            }
+            Color {
+              R: 1
+              G: 1
+              B: 1
+              A: 1
+            }
+            TeamSettings {
+            }
+            ShadowColor {
+              A: 1
+            }
+            ShadowOffset {
+            }
+            ScreenshotIndex: 1
+          }
+          AnchorLayout {
+            SelfAnchor {
+              Anchor {
+                Value: "mc:euianchor:bottomcenter"
+              }
+            }
+            TargetAnchor {
+              Anchor {
+                Value: "mc:euianchor:bottomcenter"
               }
             }
           }
@@ -2465,6 +2737,24 @@ Assets {
             }
           }
         }
+      }
+    }
+    Assets {
+      Id: 4401681575779583927
+      Name: "BG Flat 002"
+      PlatformAssetType: 9
+      PrimaryAsset {
+        AssetType: "PlatformBrushAssetRef"
+        AssetId: "BackgroundNoOutline_019"
+      }
+    }
+    Assets {
+      Id: 11379228949574851172
+      Name: "Icon Audio"
+      PlatformAssetType: 9
+      PrimaryAsset {
+        AssetType: "PlatformBrushAssetRef"
+        AssetId: "Icon_Audio"
       }
     }
     Assets {
