@@ -70,20 +70,6 @@ local function Initialize()
 	end
 end
 
---	nil OnPlayerJoined(Player)
---	Internal function that loads in data for the specified player. Connected to the Game.playerJoinedEvent event.
-local function OnPlayerJoined(player)
-	iconList[player.id] = {}
-	RetrievePlayerSessionData(player)
-end
-
---	nil OnPlayerLeft(Player)
---	Internal function that unloads in data for the specified player. Connected to the Game.playerLeftEvent event.
-local function OnPlayerLeft(player)
-	iconList[player.id] = nil
-	DestroyPlayerSessionData(player)
-end
-
 --	nil SetOverrideTitle(Player, string<TitleID>)
 --	Sets a player's override title to the title behind the supplied TitleID. The title will be reset if the title parameter is nil.
 function Config.SetOverrideTitle(player, title)
@@ -185,6 +171,23 @@ local function UpdatePlayerIconData(player)
 	finalString = string.sub(finalString, 1, string.len(finalString)-1)
 	RetrievePlayerSessionData(player):SetNetworkedCustomProperty("Icons", finalString)
 	shouldUpdatePlayerIconData = false
+end
+
+--	nil OnPlayerJoined(Player)
+--	Internal function that loads in data for the specified player. Connected to the Game.playerJoinedEvent event.
+local counter = 0
+local function OnPlayerJoined(player)
+	iconList[player.id] = {}
+	RetrievePlayerSessionData(player)
+	counter = counter + 1
+	player:SetResource("ABC", counter)
+end
+
+--	nil OnPlayerLeft(Player)
+--	Internal function that unloads in data for the specified player. Connected to the Game.playerLeftEvent event.
+local function OnPlayerLeft(player)
+	iconList[player.id] = nil
+	DestroyPlayerSessionData(player)
 end
 
 ------------------------------------------------------------------------------------------------------------------------

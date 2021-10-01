@@ -347,6 +347,7 @@ local function SpawnEntry(player)
 	UpdateEntry(player)
 	-- reorder scoreboard on modifications
 	ReorderEntries()
+	entryScores[player.id] = entryScores[player.id] or {}
 	-- return
 	return entry
 end
@@ -359,7 +360,9 @@ local function DestroyEntry(player)
 	-- skip if already nil
 	if RetrieveEntry(player) == nil then return end
 	-- destroy
-	entries[player.id]:Destroy()
+	if entries[player.id] and entries[player.id]:IsValid() then
+		entries[player.id]:Destroy()
+	end
 	entries[player.id] = nil
 	-- reorder scoreboard on modifications
 	ReorderEntries()
@@ -373,7 +376,9 @@ local function ReloadScores()
 	-- remove existing scores
 	for _, v in pairs(entryScores) do
 		for i = 1, #v do
-			v[i]:Destroy()
+			if v[i] ~= nil and v[i]:IsValid() then
+				v[i]:Destroy()
+			end
 			v[i] = nil
 		end
 	end
@@ -451,6 +456,21 @@ local function Initialize()
 	UpdateHeader()
 end
 
+--	nil OnPlayerJoined(Player)
+--	Internal function that loads in data for the specified player. Connected to the Game.playerJoinedEvent event.
+local function OnPlayerJoined(player)
+	entryScores[player.id] = entryScores[player.id] or {}
+	RetrieveEntry(player)
+	ReloadScores()
+end
+
+--	nil OnPlayerLeft(Player)
+--	Internal function that unloads in data for the specified player. Connected to the Game.playerLeftEvent event.
+local function OnPlayerLeft(player)
+	DestroyEntry(player)
+	ReloadScores()
+end
+
 --	nil ToggleListVisibility(_, string<keybind>)
 -- 	Toggles scoreboard visibility on toggle keybind press.
 local function ToggleScoreboardVisibility(_, key)
@@ -500,7 +520,7 @@ end
 ------------------------------------------------------------------------------------------------------------------------
 --	Initialization
 ------------------------------------------------------------------------------------------------------------------------
-Game.playerJoinedEvent:Connect(RetrieveEntry)
-Game.playerLeftEvent:Connect(DestroyEntry)
+Game.playerJoinedEvent:Connect(OnPlayerJoined)
+Game.playerLeftEvent:Connect(OnPlayerLeft)
 localPlayer.bindingPressedEvent:Connect(ToggleScoreboardVisibility)
 Initialize()
