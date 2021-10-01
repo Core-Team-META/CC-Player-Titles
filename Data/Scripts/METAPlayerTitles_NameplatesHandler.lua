@@ -26,11 +26,14 @@ if Config.nameplates == nil then error("Configurator doesn't include nameplate c
 ------------------------------------------------------------------------------------------------------------------------
 local localPlayer = Game.GetLocalPlayer() -- local player
 local nameplates = {} -- table holding all of the nameplates currently spawned
+local iconEllipsisImage = script:GetCustomProperty("IconEllipsisImage")
 ------------------------------------------------------------------------------------------------------------------------
 --	Functions
 ------------------------------------------------------------------------------------------------------------------------
 local RetrieveNameplate -- forward declaration
 
+--	Visibility GetNameplateVisibility(Player, Player)
+--	Returns nameplate visibility based on the players' team relation and config.
 function GetNameplateVisibility(player1, player2)
 	if not Player.IsA(player1, "Player") then return end
 	if not player1:IsValid() then return end
@@ -54,7 +57,7 @@ function GetNameplateVisibility(player1, player2)
 	end
 end
 
---	nil UpdateNameplateHealthbarColor(player, [titleData])
+--	nil UpdateNameplateHealthbarColor(Player, [table<TitleData>])
 --	Sets the color of a nameplate healthbar according to the selected color mode.
 --	Can be forced to use the title data (title config table from the module) supplied as the second argument (optional).
 --	That will only apply if the selected mode for player healthbars is TITLE.
@@ -78,7 +81,7 @@ local function UpdateNameplateHealthbarColor(player, titleData)
 	end
 end
 
---	nil UpdateNameplateHealth(player, float)
+--	nil UpdateNameplateHealth(Player, float<dt>)
 --	Updates the value of a nameplate's healthbar over time.
 local function UpdateNameplateHealth(player, dt)
 	-- get nameplate
@@ -98,7 +101,7 @@ local function UpdateNameplateHealth(player, dt)
 	barText.text = tostring(math.floor(player.hitPoints)) .. " / " .. tostring(math.floor(player.maxHitPoints))
 end
 
---	nil UpdateNameplateName(player, [titleData])
+--	nil UpdateNameplateName(Player, [table<TitleData>])
 --	Sets the text and color of a nameplate name according to the selected color mode.
 --	Can be forced to use the title data (title config table from the module) supplied as the second argument (optional).
 --	That will only apply if the selected mode for player names is TITLE.
@@ -124,7 +127,7 @@ local function UpdateNameplateName(player, titleData)
 	name.text = player.name or ""
 end
 
---	nil UpdateNameplateTitle(player, [titleData])
+--	nil UpdateNameplateTitle(Player, [table<TitleData>])
 --	Sets the title on a nameplate to the player's current default (or override if overriden) title.
 --	Can be forced to use the title data (title config table from the module) supplied as the second argument (optional).
 local function UpdateNameplateTitle(player, titleData)
@@ -142,7 +145,7 @@ local function UpdateNameplateTitle(player, titleData)
 	UpdateNameplateHealthbarColor(player, titleData)
 end
 
---	nil UpdateNameplateVisibility(player)
+--	nil UpdateNameplateVisibility(Player)
 --	Updates nameplate visibility based on the team relation of a player to the local player.
 local function UpdateNameplateVisibility(player)
 	-- get nameplate
@@ -152,7 +155,7 @@ local function UpdateNameplateVisibility(player)
 	nameplate.visibility = GetNameplateVisibility(localPlayer, player)
 end
 
---	nil UpdateVoiceChatVolume(player, float)
+--	nil UpdateVoiceChatVolume(Player, number<dt>)
 --	Updates the voice chat volume display on a player's nameplate over time.
 local voiceChatTimer = 0
 local function UpdateVoiceChatVolume(player, dt)
@@ -176,7 +179,7 @@ local function UpdateVoiceChatVolume(player, dt)
 	end
 end
 
---	nil SetNameplateIcon(player, int, iconID)
+--	nil SetNameplateIcon(Player, Integer, string<IconID>)
 --	Used internally by UpdateNameplateIcons. Sets up an icon using the specified iconID.
 local function SetNameplateIcon(player, index, iconID)
 	-- get nameplate
@@ -200,7 +203,7 @@ local function SetNameplateIcon(player, index, iconID)
 		icon.visibility = Visibility.INHERIT
 		-- set ellipsis
 		icon:SetColor(Color.WHITE)
-		icon:SetImage(Config.handler.iconEllipsisImage)
+		icon:SetImage(iconEllipsisImage)
 		icon.rotationAngle = 90
 		icon.width = 20
 		icon.height = 80
@@ -217,7 +220,7 @@ local function SetNameplateIcon(player, index, iconID)
 	end
 end
 
---	nil UpdateNameplateIcons(player)
+--	nil UpdateNameplateIcons(Player)
 --	Sets icons on a player's nameplate to whatever they are set to in that player's session data (in the handler).
 local function UpdateNameplateIcons(player)
 	local data = Config.GetPlayerSessionData(player)
@@ -236,7 +239,7 @@ local function UpdateNameplateIcons(player)
 	end
 end
 
---	nil UpdateNameplateRotation(player)
+--	nil UpdateNameplateRotation(Player)
 --	Rotates a nameplate to face the local player.
 local function UpdateNameplateRotation(player)
 	-- get nameplate
@@ -248,6 +251,8 @@ local function UpdateNameplateRotation(player)
 	nameplate:SetWorldRotation(Rotation.New(quaternion))
 end
 
+--	nil UpdateNameplateParty(Player, number<dt>)
+--	Updates the nameplate's party color and visibility.
 local function UpdateNameplateParty(player, dt)
 	-- get nameplate
 	local nameplate = RetrieveNameplate(player)
@@ -271,7 +276,7 @@ local function UpdateNameplateParty(player, dt)
 	end
 end
 
---	nil UpdateNameplate(player)
+--	nil UpdateNameplate(Player)
 --	Calls all of the update functions for a player's nameplate (excluding tick/animation functions).
 local function UpdateNameplate(player)
 	-- get nameplate
@@ -279,13 +284,13 @@ local function UpdateNameplate(player)
 	if not nameplate then return end
 	-- update
 	UpdateNameplateVisibility(player)
-	UpdateNameplateTitle(player) -- includes name and healthbar
+	UpdateNameplateTitle(player) -- includes name and healthbar update functions
 end
 
---	nameplate SpawnNameplate(player), alias: RetrieveNameplate(player)
+--	nameplate SpawnNameplate(Player), alias: RetrieveNameplate(Player)
 --	Spawns, initializes, stores, and returns the nameplate assigned to the player.
 --	Only one nameplate can be assigned to a player. If a player already has a nameplate assigned, it will be returned instead.
---	The alias is used to forward-declare the function at the start of the script (so that you can use it before it's defined).
+--	The alias is used to forward declare the function at the start of the script (so that you can use it before it's defined).
 local function SpawnNameplate(player)
 	-- check if the player is valid
 	if not Player.IsA(player, "Player") then return end
@@ -314,7 +319,7 @@ local function SpawnNameplate(player)
 end
 RetrieveNameplate = SpawnNameplate
 
---	nil DestroyNameplate(player)
+--	nil DestroyNameplate(Player)
 --	Destroys and removes the nameplate of the specified player from the scripts nameplates table.
 local function DestroyNameplate(player)
 	-- skip if already nil

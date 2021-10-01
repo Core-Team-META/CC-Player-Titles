@@ -1,6 +1,6 @@
 Assets {
   Id: 5683982208299681406
-  Name: "METAPlayerTitles_NameplateIcon"
+  Name: "METAPlayerTitles_ConfiguratorIcon"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
@@ -55,5 +55,5 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 98
+  SerializationVersion: 100
 }

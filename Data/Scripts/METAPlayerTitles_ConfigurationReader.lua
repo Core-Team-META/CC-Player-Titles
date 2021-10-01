@@ -29,24 +29,67 @@ local configuratorHandler = configurator:FindChildByName("Handler")
 --	Override Functions
 ------------------------------------------------------------------------------------------------------------------------
 do
-	-- nil SetOverrideTitle(Player, string)
-	-- Defined in METAPlayerTitles_Handler.lua
-	-- Sets a player's override title to the provided title. The title will be reset if the title parameter is nil.
+	--	Defined in METAPlayerTitles_Handler.lua
+	--	nil SetOverrideTitle(Player, string)
+	--	Sets a player's override title to the title behind the supplied TitleID. The title will be reset if the title parameter is nil.
 	if isServer then Config.SetOverrideTitle = nil else
 		function Config.SetOverrideTitle(player, title)
 			error("This function can be only called from the server.")
 		end
 	end
 
-	-- nil CreateOverrideTitle(string)
-	-- Defined in METAPlayerTitles_Handler.lua
-	-- Creates a custom title to be used when overriding titles. This title can be modified.
-	-- The provided name will be used to access the tile in code.
-	if isServer then Config.CreateOverrideTitle = nil else
-		function Config.CreateOverrideTitle(name)
+	--	Defined in METAPlayerTitles_Handler.lua
+	--	nil ModifyOverrideTitle(CoreObject<TitleSessionData>, string, any)
+	--	Modifies the supplied TitleSessionData. The changes should be applied before assigning the title to players.
+	--	The available parameters can be seen in the TitleSessionData template. They should 100% match with the ConfiguratorTitle template's properties.
+	--	The type of the last parameter changes depending on the property its supposed to overwrite. TitleColor should be set to a Color etc.
+	if isServer then Config.ModifyOverrideTitle = nil else
+		function Config.ModifyOverrideTitle(titleSessionDataInstance, property, value)
 			error("This function can be only called from the server.")
 		end
 	end
+
+	--	Defined in METAPlayerTitles_Handler.lua
+	--	table GetOverrideTitles()
+	--	Returns the titleSessionDataInstances handler table, which holds all TitleSessionData instances spawned.
+	if isServer then Config.GetOverrideTitles = nil else
+		function Config.GetOverrideTitles()
+			error("This function can be only called from the server.")
+		end
+	end
+
+	--	Defined in METAPlayerTitles_Handler.lua
+	--	CoreObject<TitleSessionData> CreateOverrideTitle(string<TitleID>)
+	--	Creates and returns an Override Title. This function returns the TitleSessionData instance, not compiled TitleData.
+	--	Its compiled TitleData can be accessed using Config.GetTitleData.
+	--	The TitleSessionData can be modified using Config.ModifyOverrideTitle.
+	-- 	The TitleID has to be either a TitleID not used by any existing Override Titles, or one of the Static Titles' TitleIDs.
+	--	Do not confuse Create with Retrieve in function names. Create functions may produce errors when trying to create duplicates, while
+	--	Retrieve functions always return the value of the existing entry under the supplied id (if there's none, one will be created), in this case TitleID.
+	if isServer then Config.CreateOverrideTitle = nil else
+		function Config.CreateOverrideTitle(title)
+			error("This function can be only called from the server.")
+		end
+	end
+
+	--	Defined in METAPlayerTitles_Handler.lua
+	--	string<IconUID>|nil RemovePlayerIcon(Player, string<IconID>, number)
+	--	Creates an icon for the specified player and returns its UID.
+	if isServer then Config.AddPlayerIcon = nil else
+		function Config.AddPlayerIcon(name)
+			error("This function can be only called from the server.")
+		end
+	end
+
+	--	Defined in METAPlayerTitles_Handler.lua
+	--	table<IconData>|nil RemovePlayerIcon(Player, string<IconUID>)
+	--	Removes and returns an icon from a player, given its UID.
+	if isServer then Config.RemovePlayerIcon = nil else
+		function Config.RemovePlayerIcon(name)
+			error("This function can be only called from the server.")
+		end
+	end
+
 end
 ------------------------------------------------------------------------------------------------------------------------
 --	Module Enums
@@ -64,7 +107,7 @@ end
 --	Module Functions
 ------------------------------------------------------------------------------------------------------------------------
 do
-	--	titleData|nil, title|nil CheckTitleDelta(player)
+	--	table<TitleData>|nil, string<TitleID>|nil CheckTitleDelta(Player)
 	--	Returns the titleData and title of a player after detecting title changes for that player.
 	--	Otherwise returns nil.
 	local deltaTitles = {}
@@ -83,7 +126,7 @@ do
 		end
 	end
 
-	--	bool CheckTeamDelta(player)
+	--	bool CheckTeamDelta(Player)
 	--	Returns true after detecting team changes for the specified player.
 	--	Otherwise returns false.
 	local deltaTeams = {}
@@ -100,7 +143,7 @@ do
 		end
 	end
 
-	-- float Approach(float, float, float, float)
+	-- number Approach(number, number, number, number)
 	-- Utility function. Interpolates a to b by c over time. Delta time is optional and makes it account for variable/different framerates.
 	function Config.Approach(a, b, c, dt)
 		if dt then c = c * (dt*60) end
@@ -147,7 +190,7 @@ do
 		end
 	end
 
-	--	Player|nil GetPlayerById(playerId)
+	--	Player|nil GetPlayerById(Player.id)
 	--	Goes through the player list and looks for a player with the matching id. Returns nil if the attempt was unsuccessful.
 	function Config.GetPlayerById(id)
 		local players = Game.GetPlayers()
@@ -231,7 +274,7 @@ do
 		return result
 	end
 
-	-- table|nil GetPlayerSessionData(Player)
+	-- table<PlayerData>|nil GetPlayerSessionData(Player)
 	-- Returns the session data for a player.
 	function Config.GetPlayerSessionData(player)
 		if not Player.IsA(player, "Player") then return end
@@ -247,7 +290,7 @@ do
 		return data
 	end
 
-	-- table|nil GetTitleSessionData(string)
+	-- table<TitleData>|nil GetTitleSessionData(string<TitleID>)
 	-- Returns the title session data for the supplied title.
 	function Config.GetTitleSessionData(title)
 		-- get title data
@@ -277,7 +320,7 @@ do
 		return title
 	end
 
-	-- table|nil GetTitleData(string)
+	-- table<TitleData>|nil string<TitleID>|nil GetTitleData(string<TitleID>)
 	-- Returns the title data for the supplied title.
 	function Config.GetTitleData(title)
 		-- set result to proper title data OR the default title config key
@@ -291,7 +334,7 @@ do
 		end
 	end
 
-	-- table|nil, string|nil GetPlayerTitle(string)
+	-- table<TitleData>|nil, string<TitleID>|nil GetPlayerTitle(Player)
 	-- Returns the title data and key its title config key for the supplied player.
 	function Config.GetPlayerTitle(player)
 		if not Player.IsA(player, "Player") then return end
@@ -375,14 +418,13 @@ do
 	-- nameplate icons
 	Config.handler.iconCount = Config.PropertyAssert(configuratorHandler, "IconCount")
 	Config.handler.iconEllipsisID = Config.PropertyAssert(configuratorHandler, "IconEllipsisID")
-	Config.handler.iconEllipsisImage = Config.PropertyAssert(configuratorHandler, "IconEllipsisImage")
 end
 ------------------------------------------------------------------------------------------------------------------------
 --	Nameplates Data
 ------------------------------------------------------------------------------------------------------------------------
 if configuratorNameplates then
 	Config.nameplates = {}
-	
+
 	-- icons
 	do
 		Config.nameplates.icons = {}
@@ -434,7 +476,7 @@ end
 ------------------------------------------------------------------------------------------------------------------------
 if configuratorList then
 	Config.list = {}
-	
+
 	-- read properties
 	-- color modes
 	Config.list.nameColorMode = Config.PropertyAssert(configuratorList, "NameColorMode")

@@ -15,7 +15,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 4781671109827199097
+        ParentId: 10497177608845763861
         ChildIds: 14208370963874050616
         ChildIds: 6827826702186852842
         ChildIds: 9311108598448503833
@@ -686,6 +686,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "Team META Account"
         }
       }
       Objects {
@@ -723,6 +724,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "Aggripina (Lead)"
         }
       }
       Objects {
@@ -760,6 +762,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "Aj"
         }
       }
       Objects {
@@ -797,6 +800,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "AwkwardGameDev (Lead)"
         }
       }
       Objects {
@@ -834,6 +838,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "blaking707 (Lead)"
         }
       }
       Objects {
@@ -871,6 +876,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "Burnzie"
         }
       }
       Objects {
@@ -908,6 +914,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "Chipnertkj ;)"
         }
       }
       Objects {
@@ -945,6 +952,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "Coderz"
         }
       }
       Objects {
@@ -982,6 +990,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "Daddio"
         }
       }
       Objects {
@@ -1019,6 +1028,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "Datonare"
         }
       }
       Objects {
@@ -1056,6 +1066,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "Divide"
         }
       }
       Objects {
@@ -1093,6 +1104,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "Egg"
         }
       }
       Objects {
@@ -1130,6 +1142,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "estlogic"
         }
       }
       Objects {
@@ -1167,6 +1180,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "mjcortes782"
         }
       }
       Objects {
@@ -1204,6 +1218,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "Jarsa"
         }
       }
       Objects {
@@ -1241,6 +1256,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "KonzZwodrei"
         }
       }
       Objects {
@@ -1278,6 +1294,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "LotusCracker"
         }
       }
       Objects {
@@ -1315,6 +1332,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "Melamoryxq (Lead)"
         }
       }
       Objects {
@@ -1352,6 +1370,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "Morticai (Lead)"
         }
       }
       Objects {
@@ -1389,6 +1408,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "Mucusinator"
         }
       }
       Objects {
@@ -1426,6 +1446,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "Ocylix"
         }
       }
       Objects {
@@ -1463,6 +1484,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "Ooccoo (Lead)"
         }
       }
       Objects {
@@ -1500,6 +1522,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "Outrun"
         }
       }
       Objects {
@@ -1537,6 +1560,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "Rolok"
         }
       }
       Objects {
@@ -1574,6 +1598,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "Staypunny"
         }
       }
       Objects {
@@ -1611,6 +1636,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "WindfallDrifter"
         }
       }
       Objects {
@@ -1753,6 +1779,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "aBomb"
         }
       }
       Objects {
@@ -1790,6 +1817,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "Anna"
         }
       }
       Objects {
@@ -1827,6 +1855,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "Basilisk"
         }
       }
       Objects {
@@ -1864,6 +1893,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "Bigglebuns"
         }
       }
       Objects {
@@ -1901,6 +1931,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "Buckmonster"
         }
       }
       Objects {
@@ -1938,6 +1969,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "Bumblebear"
         }
       }
       Objects {
@@ -1975,6 +2007,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "Chris"
         }
       }
       Objects {
@@ -2012,6 +2045,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "coreslinkous"
         }
       }
       Objects {
@@ -2049,6 +2083,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "deadlyfishesMC"
         }
       }
       Objects {
@@ -2086,6 +2121,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "Depp"
         }
       }
       Objects {
@@ -2123,6 +2159,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "Dracowolfie"
         }
       }
       Objects {
@@ -2160,6 +2197,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "featurecreeper"
         }
       }
       Objects {
@@ -2197,6 +2235,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "Gabunir"
         }
       }
       Objects {
@@ -2234,6 +2273,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "Griffin"
         }
       }
       Objects {
@@ -2271,6 +2311,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "Holy"
         }
       }
       Objects {
@@ -2308,6 +2349,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "JayDee"
         }
       }
       Objects {
@@ -2345,6 +2387,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "kytsu"
         }
       }
       Objects {
@@ -2382,6 +2425,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "lodle"
         }
       }
       Objects {
@@ -2419,6 +2463,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "lokii"
         }
       }
       Objects {
@@ -2456,6 +2501,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "max"
         }
       }
       Objects {
@@ -2493,6 +2539,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "Mehaji"
         }
       }
       Objects {
@@ -2530,6 +2577,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "mrbigfists"
         }
       }
       Objects {
@@ -2567,6 +2615,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "pchiu"
         }
       }
       Objects {
@@ -2604,6 +2653,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "Poippels"
         }
       }
       Objects {
@@ -2641,6 +2691,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "qualispec"
         }
       }
       Objects {
@@ -2678,6 +2729,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "Robotron"
         }
       }
       Objects {
@@ -2715,6 +2767,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "rbrown"
         }
       }
       Objects {
@@ -2752,6 +2805,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "Scav"
         }
       }
       Objects {
@@ -2789,6 +2843,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "Sobchak"
         }
       }
       Objects {
@@ -2826,6 +2881,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "standardcombo"
         }
       }
       Objects {
@@ -2863,6 +2919,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "Stanzilla"
         }
       }
       Objects {
@@ -2900,6 +2957,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "Stephano"
         }
       }
       Objects {
@@ -2937,6 +2995,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "Tobs"
         }
       }
       Objects {
@@ -2974,6 +3033,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "Turbo"
         }
       }
       Objects {
@@ -3011,6 +3071,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "Wafffle"
         }
       }
       Objects {
@@ -3048,6 +3109,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "zurishmi"
         }
       }
       Objects {
@@ -3190,6 +3252,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "LuckofBuck (https___www_tiktok_com__luckofbuckdev)"
         }
       }
       Objects {
@@ -3227,6 +3290,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "marcepan (https___www_tiktok_com__rippleoverdrive)"
         }
       }
       Objects {
@@ -3264,6 +3328,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "OwndogGames (https___www_twitch_tv_owndoggames)"
         }
       }
       Objects {
@@ -3301,6 +3366,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "mtgnerdgirl (https___sullygnome_com_channel_mtgnerdgirl)"
         }
       }
       Objects {
@@ -3338,6 +3404,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "LanaLux (https___www_twitch_tv_lana_lux)"
         }
       }
       Objects {
@@ -3375,6 +3442,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "Jaxboxchick (https___www_twitch_tv_thatJaxboxchick)"
         }
       }
       Objects {
@@ -3412,6 +3480,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "TheBronzeSword (https___www_twitch_tv_thebronzesword)"
         }
       }
       Objects {
@@ -3449,6 +3518,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "MetsuRjKen (https___www_twitch_tv_metsurjken)"
         }
       }
       Objects {
@@ -3486,6 +3556,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "Aphrim (https___www_youtube_com_c_Aphrim_videos)"
         }
       }
       Objects {
@@ -3523,6 +3594,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "Morticai (https___www_youtube_com_c_GamerTitanYT_videos)"
         }
       }
       Objects {
@@ -3560,6 +3632,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "YoinkedGaming (https___www_youtube_com_c_YoinkedGaming_videos)"
         }
       }
       Objects {
@@ -3597,6 +3670,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "Ducain23 (https___www_youtube_com_c_DucainPlays_videos)"
         }
       }
       Objects {
@@ -3634,6 +3708,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "StormHawk (https___www_youtube_com_c_StormHawk_videos)"
         }
       }
       Objects {
@@ -3671,6 +3746,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "RayBenefield (https___www_youtube_com_c_RayBenefield_videos)"
         }
       }
       Objects {
@@ -3708,6 +3784,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "Devoun (https___www_youtube_com_c_devoun)"
         }
       }
       Objects {
@@ -3745,6 +3822,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "DVPlays (https___www_youtube_com_c_DVwastaken_videos)"
         }
       }
       Objects {
@@ -3782,6 +3860,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "Matworks (https___www_youtube_com_c_MATHIEU_YT_videos)"
         }
       }
       Objects {
@@ -3819,6 +3898,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "LotusCracker (https___www_youtube_com_c_lotuscracker)"
         }
       }
       Objects {
@@ -3856,6 +3936,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "pinkpockettv (https___www_youtube_com_c_pinkpocketTV_videos)"
         }
       }
       Objects {
@@ -3893,6 +3974,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "Noangy (https___www_youtube_com_c_BetronerGames_videos)"
         }
       }
       Objects {
@@ -3930,6 +4012,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "ICEARROW_YOUTUBE (https___www_youtube_com_c_IceArrow_videos)"
         }
       }
       Objects {
@@ -3967,6 +4050,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "Mucusinator (https___www_youtube_com_c_Arkpoint_videos)"
         }
       }
       Objects {
@@ -4004,6 +4088,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "FLEX_CHADWELL (https___www_twitch_tv_flex_chadwell)"
         }
       }
       Objects {
@@ -4041,6 +4126,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "GGJay (https___www_twitch_tv_ggjay)"
         }
       }
       Objects {
@@ -4078,6 +4164,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "Twitch-RaynRaps (https___www_twitch_tv_raynraps_)"
         }
       }
       Objects {
@@ -4115,6 +4202,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "KainAkin"
         }
       }
       Objects {
@@ -4152,6 +4240,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "AtariKafa (https___www_twitch_tv_atarikafa)"
         }
       }
       Objects {
@@ -4189,6 +4278,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "MrViirtuoz (https___www_youtube_com_user_MrVirTuoZLP_videos)"
         }
       }
       Objects {
@@ -4226,6 +4316,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "Vilva (https___youtube_com_c_vilva1)"
         }
       }
       Objects {
@@ -4263,6 +4354,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "Bearskopff (https___www_youtube_com_c_BearlyRegal)"
         }
       }
       Objects {
@@ -4293,12 +4385,6 @@ Assets {
           Overrides {
             Name: "cs:IconEllipsisID"
             String: "#ellipsis"
-          }
-          Overrides {
-            Name: "cs:IconEllipsisImage"
-            AssetReference {
-              Id: 13402598540318648810
-            }
           }
           Overrides {
             Name: "cs:PlayerSessionDataTemplate"
@@ -4540,6 +4626,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "Example Icon"
         }
       }
       Objects {
@@ -5026,6 +5113,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "Deaths"
         }
       }
       Objects {
@@ -5079,6 +5167,7 @@ Assets {
         }
         Folder {
           IsFilePartition: true
+          FilePartitionName: "Kills"
         }
       }
     }
@@ -5146,15 +5235,6 @@ Assets {
       }
     }
     Assets {
-      Id: 13402598540318648810
-      Name: "Icon Menu"
-      PlatformAssetType: 9
-      PrimaryAsset {
-        AssetType: "PlatformBrushAssetRef"
-        AssetId: "Icon_Menu"
-      }
-    }
-    Assets {
       Id: 5374390865387286219
       Name: "Fantasy Ability Blue 001"
       PlatformAssetType: 9
@@ -5168,5 +5248,5 @@ Assets {
       AssetId: "None"
     }
   }
-  SerializationVersion: 98
+  SerializationVersion: 100
 }

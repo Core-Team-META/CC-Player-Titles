@@ -47,7 +47,8 @@ local function ReorderEntries()
 	end
 end
 
---	Returns the visibility that an entry should use, based on the team relation and config settings.
+--	Visibility GetEntryVisibility(Player, Player)
+--	Returns entry visibility based on the players' team relation and config.
 function GetEntryVisibility(player1, player2)
 	if not Player.IsA(player1, "Player") then return end
 	if not player1:IsValid() then return end
@@ -71,7 +72,7 @@ function GetEntryVisibility(player1, player2)
 	end
 end
 
---	nil UpdateHeaderName(titleData)
+--	nil UpdateHeaderName([table<TitleData>])
 --	Updates the name of the header. The parameter is for internal use (to use cached title data, can be used to override).
 local function UpdateHeaderName(titleData)
 	-- no need to check for player validity
@@ -93,7 +94,7 @@ local function UpdateHeaderName(titleData)
 	name.text = localPlayer.name or ""
 end
 
---	nil UpdateHeaderSidebar(titleData)
+--	nil UpdateHeaderSidebar([table<TitleData>])
 --	Updates the sidebar of the header. The parameter is for internal use (to use cached title data, can be used to override).
 local function UpdateHeaderSidebar(titledata)
 	-- no need to check for player validity
@@ -113,7 +114,7 @@ local function UpdateHeaderSidebar(titledata)
 	end
 end
 
---	nil UpdateHeaderTitle(titleData)
+--	nil UpdateHeaderTitle([table<TitleData>])
 --	Updates the title of the header. The parameter is for internal use (to use cached title data, can be used to override).
 local function UpdateHeaderTitle(titleData)
 	-- no need to check for player validity
@@ -155,7 +156,7 @@ local function UpdateHeader()
 	UpdateHeaderTitle() -- includes name and sidebar
 end
 
---	nil UpdateEntryVisibility(player)
+--	nil UpdateEntryVisibility(Player)
 --	Updates the visibility of a player's entry. Called every frame in Tick.
 local function UpdateEntryVisibility(player)
 	-- get entry
@@ -167,7 +168,7 @@ local function UpdateEntryVisibility(player)
 	entry.visibility = v
 end
 
---	nil UpdateEntryName(player, titleData)
+--	nil UpdateEntryName(Player, [table<TitleData>])
 --	Updates the name of a player's entry. The second parameter is for internal use (to use cached title data, can be used to override).
 local function UpdateEntryName(player, titleData)
 	-- get entry
@@ -191,7 +192,7 @@ local function UpdateEntryName(player, titleData)
 	name.text = player.name or ""
 end
 
---	nil UpdateEntrySidebar(player, titleData)
+--	nil UpdateEntrySidebar(Player, [table<TitleData>])
 --	Updates the sidebar of a player's entry. The second parameter is for internal use (to use cached title data, can be used to override).
 local function UpdateEntrySidebar(player, titleData)
 	-- get entry
@@ -213,7 +214,7 @@ local function UpdateEntrySidebar(player, titleData)
 	end
 end
 
---	nil UpdateEntryTitle(player, titleData)
+--	nil UpdateEntryTitle(Player, [table<TitleData>])
 --	Updates the title of a player's entry. The second parameter is for internal use (to use cached title data, can be used to override).
 local function UpdateEntryTitle(player, titleData)
 	-- get entry
@@ -244,7 +245,7 @@ local function UpdateEntryTitle(player, titleData)
 	UpdateEntrySidebar(player, titleData)
 end
 
---	nil UpdateEntryParty(player, float)
+--	nil UpdateEntryParty(Player, number<dt>)
 --	Updates the color of a player's party icon to a color generated from their party id. Animates the party icon.
 local function UpdateEntryParty(player, dt)
 	-- get entry
@@ -266,7 +267,7 @@ local function UpdateEntryParty(player, dt)
 	end
 end
 
---	nil UpdateEntry(player)
+--	nil UpdateEntry(Player)
 --	A function that updates an entry. Usually called right after its spawned in.
 local function UpdateEntry(player)
 	-- get entry
@@ -276,6 +277,8 @@ local function UpdateEntry(player)
 	UpdateEntryTitle(player)
 end
 
+--	nil UpdateListVisibility(number<dt>)
+--	Animates the list on visibility switching.
 local function UpdateListVisibility(dt)
 	-- get height
 	local height = math.min(
@@ -295,7 +298,7 @@ local function UpdateListVisibility(dt)
 	listVisibilityDelta = math.min(listVisibilityDelta + dt, curve.maxTime)
 end
 
---	entry SpawnEntry(player)
+--	CoreObject<Entry> SpawnEntry(Player)
 --	Spawns in and adds the supplied player's entry to the list.
 local function SpawnEntry(player)
 	-- check if the player is valid
@@ -324,7 +327,7 @@ end
 RetrieveEntry = SpawnEntry
 
 
---	nil DestroyEntry(player)
+--	nil DestroyEntry(Player)
 --	Destroys and removes the supplied player's entry from the list.
 local function DestroyEntry(player)
 	-- skip if already nil
@@ -352,7 +355,7 @@ local function Initialize()
 	UpdateHeader()
 end
 
---	nil ToggleListVisibility(_, string)
+--	nil ToggleListVisibility(_, string<keybind>)
 -- 	Toggles list visibility on toggle keybind press.
 local function ToggleListVisibility(_, key)
 	if key == Config.list.keybindToggle then

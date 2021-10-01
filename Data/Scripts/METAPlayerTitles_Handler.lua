@@ -24,66 +24,122 @@ local Config = require(script:GetCustomProperty("ConfiguratorReader"))
 ------------------------------------------------------------------------------------------------------------------------
 --	Script Data
 ------------------------------------------------------------------------------------------------------------------------
-local playerDataInstances = {}
-local titleDataInstances = {}
-local shouldUpdatePlayerIconData = false
-local iconList = {}
+local playerSessionDataInstances = {} -- all PlayerSessionData CoreObjects
+local titleSessionDataInstances = {} -- all TitleSessionData CoreObjects
+local shouldUpdatePlayerIconData = false -- icon data delta, used to replicate icon data on changes
+local iconList = {} -- icon table for each player
 ------------------------------------------------------------------------------------------------------------------------
 --	Functions
 ------------------------------------------------------------------------------------------------------------------------
-local function RetrievePlayerDataObject(player)
-	if player == nil then return end
-	if player.id == nil then return end
-	if playerDataInstances[player.id] then return playerDataInstances[player.id] end
+--	CoreObject<PlayerSessionData>|nil RetrievePlayerSessionData(Player)
+--	Creates and or returns the session data for the specified player. Used to access the data.
+local function RetrievePlayerSessionData(player)
+	-- check if the player is valid
+	if not Player.IsA(player, "Player") then return end
+	if not player:IsValid() then return end
+	if playerSessionDataInstances[player.id] then return playerSessionDataInstances[player.id] end
 	-- spawn
 	local data = World.SpawnAsset(Config.handler.playerSessionDataTemplate, {parent = playerDataFolder})
 	data.name = tostring(player.id)
 	-- return
-	playerDataInstances[player.id] = data
-	return playerDataInstances[player.id]
+	playerSessionDataInstances[player.id] = data
+	return playerSessionDataInstances[player.id]
 end
 
-local function DestroyPlayerDataObject(player)
-	if player == nil then return end
-	if player.id == nil then return end
-	if not playerDataInstances[player.id] then return end
+--	nil DestroyPlayerSessionData(Player)
+--	Destroys the PlayerSessionData object of the specified player from hierarchy.
+--	Used for unloading on player exit.
+local function DestroyPlayerSessionData(player)
+	-- check if the player is valid
+	if not Player.IsA(player, "Player") then return end
+	if not player:IsValid() then return end
+	if not playerSessionDataInstances[player.id] then return end
 	-- destroy
-	playerDataInstances[player.id]:Destroy()
-	playerDataInstances[player.id] = nil
+	playerSessionDataInstances[player.id]:Destroy()
+	playerSessionDataInstances[player.id] = nil
 end
 
+--	nil Initialize()
+--	Prepares the script. Loads in data objects and prepares a table with icons for each player.
 local function Initialize()
 	local players = Game.GetPlayers()
 	for i = 1, #players do
 		local player = players[i]
 		iconList[player.id] = {}
-		RetrievePlayerDataObject(player)
+		RetrievePlayerSessionData(player)
 	end
 end
 
+--	nil OnPlayerJoined(Player)
+--	Internal function that loads in data for the specified player. Connected to the Game.playerJoinedEvent event.
 local function OnPlayerJoined(player)
 	iconList[player.id] = {}
-	RetrievePlayerDataObject(player)
+	RetrievePlayerSessionData(player)
 end
 
+--	nil OnPlayerLeft(Player)
+--	Internal function that unloads in data for the specified player. Connected to the Game.playerLeftEvent event.
 local function OnPlayerLeft(player)
 	iconList[player.id] = nil
-	DestroyPlayerDataObject(player)
+	DestroyPlayerSessionData(player)
 end
 
+--	nil SetOverrideTitle(Player, string<TitleID>)
+--	Sets a player's override title to the title behind the supplied TitleID. The title will be reset if the title parameter is nil.
 function Config.SetOverrideTitle(player, title)
-	if player == nil then return end
-	if player.id == nil then return end
+	-- check if the player is valid
+	if not Player.IsA(player, "Player") then return end
+	if not player:IsValid() then return end
 	-- set title
-	local data = RetrievePlayerDataObject(player)
+	local data = RetrievePlayerSessionData(player)
 	data:SetNetworkedCustomProperty("OverrideTitle", title or "")
 end
 
+--	nil ModifyOverrideTitle(CoreObject<TitleSessionData>, string, any)
+--	Modifies the supplied TitleSessionData. The changes should be applied before assigning the title to players.
+--	The available parameters can be seen in the TitleSessionData template. They should 100% match with the ConfiguratorTitle template's properties.
+--	The type of the last parameter changes depending on the property its supposed to overwrite. TitleColor should be set to a Color etc.
+function Config.ModifyOverrideTitle(titleSessionDataInstance, property, value)
+	if not titleSessionDataInstance then return end
+	if not CoreObject.IsA(titleSessionDataInstance, "CoreObject") then return end
+	if not titleSessionDataInstance:IsValid() then return end
+	-- modify
+	titleSessionDataInstance:SetNetworkedCustomProperty(property, value)
+end
+
+--	table GetOverrideTitles()
+--	Returns the titleSessionDataInstances handler table, which holds all TitleSessionData instances spawned.
+function Config.GetOverrideTitles()
+	return titleSessionDataInstances
+end
+
+--	CoreObject<TitleSessionData> CreateOverrideTitle(string<TitleID>)
+--	Creates and returns an Override Title. This function returns the TitleSessionData instance, not compiled TitleData.
+--	Its compiled TitleData can be accessed using Config.GetTitleData.
+--	The TitleSessionData can be modified using Config.ModifyOverrideTitle.
+-- 	The TitleID has to be either a TitleID not used by any existing Override Titles, or one of the Static Titles' TitleIDs.
+--	Do not confuse Create with Retrieve in function names. Create functions may produce errors when trying to create duplicates, while
+--	Retrieve functions always return the value of the existing entry under the supplied id (if there's none, one will be created), in this case TitleID.
+function Config.CreateOverrideTitle(title)
+	if titleDataFolder:FindChildByName(title) then error("Override Title with the name \"" .. tostring(title) .. "\" already exists!") end
+	-- spawn
+	titleSessionDataInstance = World.SpawnAsset(Config.handler.titleSessionDataTemplate, {parent = titleDataFolder})
+	titleSessionDataInstance.name = title
+	-- return
+	titleSessionDataInstances[#titleSessionDataInstances] = titleSessionDataInstance
+	return titleSessionDataInstance
+end
+
+--	string<IconUID>|nil RemovePlayerIcon(Player, string<IconID>, number)
+--	Creates an icon for the specified player and returns its UID.
 function Config.AddPlayerIcon(player, iconID, duration)
+	-- check if the player is valid
+	if not Player.IsA(player, "Player") then return end
+	if not player:IsValid() then return end
 	-- generate unique id
 	local iconUID
 	repeat
-		iconUID = math.random()
+		iconUID = tostring(math.random()) .. tostring(math.random())
 	until iconList[player.id][iconUID] == nil
 	-- add to list and return iconUID
 	iconList[player.id][iconUID] = {iconID = iconID, duration = tonumber(duration)}
@@ -91,7 +147,12 @@ function Config.AddPlayerIcon(player, iconID, duration)
 	return iconUID
 end
 
+--	table<IconData>|nil RemovePlayerIcon(Player, string<IconUID>)
+--	Removes and returns an icon from a player, given its UID.
 function Config.RemovePlayerIcon(player, iconUID)
+	-- check if the player is valid
+	if not Player.IsA(player, "Player") then return end
+	if not player:IsValid() then return end
 	if not iconUID then return nil end
 	-- add to list and return id
 	local r = iconList[player.id][iconUID]
@@ -100,9 +161,11 @@ function Config.RemovePlayerIcon(player, iconUID)
 	return r
 end
 
+--	nil UpdatePlayerIconData(Player)
+--	Compiles data from a player's iconList table entry into a string and replicates it using a networked custom property.
 local function UpdatePlayerIconData(player)
 	-- data
-	local data = RetrievePlayerDataObject(player):GetCustomProperty("Icons")
+	local data = RetrievePlayerSessionData(player):GetCustomProperty("Icons")
 	-- prepare final list
 	local list = {}
 	i = 0
@@ -120,13 +183,14 @@ local function UpdatePlayerIconData(player)
 		finalString = finalString .. tostring(list[i] or "") .. ":"
 	end
 	finalString = string.sub(finalString, 1, string.len(finalString)-1)
-	RetrievePlayerDataObject(player):SetNetworkedCustomProperty("Icons", finalString)
+	RetrievePlayerSessionData(player):SetNetworkedCustomProperty("Icons", finalString)
 	shouldUpdatePlayerIconData = false
 end
 
 ------------------------------------------------------------------------------------------------------------------------
 --	Tick
 ------------------------------------------------------------------------------------------------------------------------
+-- Handles icon duration and icon data updating.
 function Tick(dt)
 	-- update duration
 	for pid, _ in pairs(iconList) do

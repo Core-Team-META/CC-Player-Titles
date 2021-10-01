@@ -1,5 +1,5 @@
 GameId: "0C5A50CA4425B69C51BC2B839915B36D"
 DisplayName: "META Player Titles"
-GameSerializationVersion: 98
+GameSerializationVersion: 100
 Framework: "Empty Project"
 StorageVersion: 2

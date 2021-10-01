@@ -20,7 +20,22 @@ Assets {
         ObjectReference {
         }
       }
+      Overrides {
+        Name: "cs:IconEllipsisImage"
+        AssetReference {
+          Id: 13402598540318648810
+        }
+      }
+    }
+    Assets {
+      Id: 13402598540318648810
+      Name: "Icon Menu"
+      PlatformAssetType: 9
+      PrimaryAsset {
+        AssetType: "PlatformBrushAssetRef"
+        AssetId: "Icon_Menu"
+      }
     }
   }
-  SerializationVersion: 98
+  SerializationVersion: 100
 }
