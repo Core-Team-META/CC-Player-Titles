@@ -186,13 +186,14 @@ local function SetNameplateIcon(player, index, iconID)
 	local nameplate = RetrieveNameplate(player)
 	if not nameplate then return end
 	-- references
-	local icons = nameplate:GetCustomProperty("Icons"):WaitForObject():GetChildren()
-	local icon = icons[index]:FindChildByName("Icon")
+	local icons = nameplate:GetCustomProperty("Icons"):GetObject()
+	icons = icons and icons:GetChildren() or {}
+	local icon = icons[index] and icons[index]:FindChildByName("Icon")
 	-- data
 	if Config.nameplates.icons[iconID] == nil and iconID ~= Config.handler.iconEllipsisID and iconID ~= iconID then warn("This iconID (\"" .. tostring(iconID) .. "\") doesn't have a corresponding icon in the configurator.") end
 	local iconData = Config.nameplates.icons[iconID]
 	-- update
-	if icon == nil then error("Missing icon slot (" .. tostring(index) .. ".) in the nameplate template. If you removed any slots manually, be sure to adjust Config.handler.iconCount in the configurator.") end
+	if icon == nil then return end
 	-- set
 	if iconID == nil then
 		-- disable

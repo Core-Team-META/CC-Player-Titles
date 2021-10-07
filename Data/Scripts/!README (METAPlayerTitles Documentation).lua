@@ -212,6 +212,9 @@
 		Config.AddPlayerIcon and Config.RemovePlayerIcon (functions from the Config module) respectively, but only from the server.
 		The Handler takes care of the replication process (networking) on its own.
 
+		There are several versions of the default nameplate template available in this package. You can swap out the one in the configurator with
+		one of the nameplate templates from Project Content.
+
 	3.2. List
 		The List is a component that displays the players currently connected to the game in a list. Player entry visibility can be filtered
 		by their team relation to the local player (check the Configurator). Each entry displays the player's avatar, title and party.

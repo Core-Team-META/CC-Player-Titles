@@ -16,6 +16,9 @@ Objects {
   }
   ChildIds: 3274651920465344985
   ChildIds: 10497177608845763861
+  ChildIds: 8358096373870525280
+  ChildIds: 12577440730730879636
+  ChildIds: 9323934978391664220
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -28,6 +31,119 @@ Objects {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
   Folder {
+  }
+}
+Objects {
+  Id: 9323934978391664220
+  Name: "METAPlayerTitles_NameplateBig"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 7593902564805520675
+      value {
+        Overrides {
+          Name: "Name"
+          String: "METAPlayerTitles_NameplateBig"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            Y: 190
+            Z: 100
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 13498140294371130688
+    }
+  }
+}
+Objects {
+  Id: 12577440730730879636
+  Name: "METAPlayerTitles_NameplateMedium"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 13445160035946176567
+      value {
+        Overrides {
+          Name: "Name"
+          String: "METAPlayerTitles_NameplateMedium"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            Z: 100
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 17623253469684469968
+    }
+  }
+}
+Objects {
+  Id: 8358096373870525280
+  Name: "METAPlayerTitles_NameplateSmall"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 5880308012203000869
+      value {
+        Overrides {
+          Name: "Name"
+          String: "METAPlayerTitles_NameplateSmall"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+            Y: -180
+            Z: 100
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 6531209979721090717
+    }
   }
 }
 Objects {

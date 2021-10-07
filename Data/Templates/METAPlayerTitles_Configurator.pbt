@@ -4529,6 +4529,10 @@ Assets {
             Name: "cs:ShowFriendly:tooltip"
             String: "Whether to hide the nameplates of friendly players."
           }
+          Overrides {
+            Name: "cs:NameplateTemplate:tooltip"
+            String: "The template used as the nameplate template. There are different nameplate sizes available as templates packaged with this CC piece. You can find them in project content."
+          }
         }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
@@ -4711,8 +4715,8 @@ Assets {
                 }
                 Time: 0.1
                 Value: 1
-                ArriveTangent: 2.5
-                LeaveTangent: 2.5
+                ArriveTangent: -15
+                LeaveTangent: -15
               }
               PreExtrapolation {
                 Value: "mc:erichcurveextrapolation:rcce_constant"
@@ -4743,8 +4747,8 @@ Assets {
                   Value: "mc:erichcurvetangentmode:rctm_user"
                 }
                 Time: 0.1
-                ArriveTangent: -2.5
-                LeaveTangent: 2.5
+                ArriveTangent: -15
+                LeaveTangent: -15
               }
               PreExtrapolation {
                 Value: "mc:erichcurveextrapolation:rcce_constant"
@@ -4904,10 +4908,33 @@ Assets {
                 TangentMode {
                   Value: "mc:erichcurvetangentmode:rctm_user"
                 }
-                Time: 0.1
+                Time: 0.03
+                Value: 20
+                ArriveTangent: 800
+                LeaveTangent: 800
+              }
+              Keys {
+                Interpolation {
+                  Value: "mc:erichcurveinterpmode:rcim_cubic"
+                }
+                TangentMode {
+                  Value: "mc:erichcurvetangentmode:rctm_user"
+                }
+                Time: 0.075
+                Value: 35
+                ArriveTangent: 100
+                LeaveTangent: 100
+              }
+              Keys {
+                Interpolation {
+                  Value: "mc:erichcurveinterpmode:rcim_cubic"
+                }
+                TangentMode {
+                  Value: "mc:erichcurvetangentmode:rctm_user"
+                }
+                Time: 0.125
                 Value: 40
-                ArriveTangent: 2.5
-                LeaveTangent: 2.5
+                LeaveTangent: 35
               }
               PreExtrapolation {
                 Value: "mc:erichcurveextrapolation:rcce_constant"
@@ -4937,8 +4964,20 @@ Assets {
                   Value: "mc:erichcurvetangentmode:rctm_user"
                 }
                 Time: 0.1
-                ArriveTangent: -2.5
-                LeaveTangent: 2.5
+                Value: 20
+                ArriveTangent: -500
+                LeaveTangent: -500
+              }
+              Keys {
+                Interpolation {
+                  Value: "mc:erichcurveinterpmode:rcim_cubic"
+                }
+                TangentMode {
+                  Value: "mc:erichcurvetangentmode:rctm_user"
+                }
+                Time: 0.15
+                ArriveTangent: -15
+                LeaveTangent: -15
               }
               PreExtrapolation {
                 Value: "mc:erichcurveextrapolation:rcce_constant"
