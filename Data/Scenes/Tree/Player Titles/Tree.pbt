@@ -19,20 +19,6 @@ Objects {
   }
   TemplateInstance {
     ParameterOverrideMap {
-      key: 9311108598448503833
-      value {
-        Overrides {
-          Name: "cs:HandlerInstance"
-          ObjectReference {
-            SelfId: 11724767167986023796
-            SubObjectId: 3919527880117986418
-            InstanceId: 5500048560983525449
-            TemplateId: 16302603277956090916
-          }
-        }
-      }
-    }
-    ParameterOverrideMap {
       key: 18148658078338840680
       value {
         Overrides {

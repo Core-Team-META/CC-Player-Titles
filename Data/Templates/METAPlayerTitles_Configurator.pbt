@@ -147,9 +147,9 @@ Assets {
         ChildIds: 10400019332374687864
         ChildIds: 4953614626465234481
         ChildIds: 10389517128414632044
+        ChildIds: 16500169094052482629
         ChildIds: 1645301479855855530
         ChildIds: 15212463606543912763
-        ChildIds: 16500169094052482629
         UnregisteredParameters {
           Overrides {
             Name: "cs:DefaultTitle"
@@ -552,6 +552,1251 @@ Assets {
         Folder {
           IsFilePartition: true
           FilePartitionName: "Quality Assurance"
+        }
+      }
+      Objects {
+        Id: 16500169094052482629
+        Name: "Content Creator"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 6827826702186852842
+        ChildIds: 11915782065123767809
+        ChildIds: 318373897702449623
+        ChildIds: 3397268199534450473
+        ChildIds: 14884475478765231268
+        ChildIds: 4100964845950257761
+        ChildIds: 270767524188549804
+        ChildIds: 2881244425428650604
+        ChildIds: 15459241152027395900
+        ChildIds: 13506665287524532555
+        ChildIds: 2886521030082077833
+        ChildIds: 13743368117243834200
+        ChildIds: 16617443843141007556
+        ChildIds: 2165355121103357985
+        ChildIds: 9832028803407552609
+        ChildIds: 1257210804188023078
+        ChildIds: 14649963934128949309
+        ChildIds: 91993814830822493
+        ChildIds: 13235990868517900390
+        ChildIds: 5064084769609547846
+        ChildIds: 17303289216619758049
+        ChildIds: 12062631381026758550
+        ChildIds: 12442067786852216568
+        ChildIds: 4291737791998627023
+        ChildIds: 15557767220013683684
+        ChildIds: 15239004600456978009
+        ChildIds: 6234854708654047621
+        ChildIds: 4435825606158170432
+        ChildIds: 8796237671332316569
+        ChildIds: 14126347449113239345
+        ChildIds: 14746616144954316715
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:Title"
+            String: "Content Creator"
+          }
+          Overrides {
+            Name: "cs:TitleColor"
+            Color {
+              R: 0.896269679
+              G: 0.637597
+              B: 0.332451582
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "cs:Icon"
+            AssetReference {
+              Id: 6595698929899861519
+            }
+          }
+          Overrides {
+            Name: "cs:IconColor"
+            Color {
+              R: 0.896269679
+              G: 0.637597
+              B: 0.332451582
+              A: 1
+            }
+          }
+          Overrides {
+            Name: "cs:IconRotation"
+            Float: 0
+          }
+          Overrides {
+            Name: "cs:IconSizeOffset"
+            Vector2 {
+            }
+          }
+          Overrides {
+            Name: "cs:IsModerator"
+            Bool: false
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "Content Creator"
+        }
+      }
+      Objects {
+        Id: 11915782065123767809
+        Name: "LuckofBuck (https://www.tiktok.com/@luckofbuckdev)"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16500169094052482629
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:PlayerMUID"
+            String: "e21aadb442b44ccaa39b2c4b12929f85"
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "LuckofBuck (https___www_tiktok_com__luckofbuckdev)"
+        }
+      }
+      Objects {
+        Id: 318373897702449623
+        Name: "marcepan (https://www.tiktok.com/@rippleoverdrive)"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16500169094052482629
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:PlayerMUID"
+            String: "2966d17cd7734da19e882335efffc4b8"
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "marcepan (https___www_tiktok_com__rippleoverdrive)"
+        }
+      }
+      Objects {
+        Id: 3397268199534450473
+        Name: "OwndogGames (https://www.twitch.tv/owndoggames)"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16500169094052482629
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:PlayerMUID"
+            String: "6035ae98674b45b690520eac49b0e78f"
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "OwndogGames (https___www_twitch_tv_owndoggames)"
+        }
+      }
+      Objects {
+        Id: 14884475478765231268
+        Name: "mtgnerdgirl (https://sullygnome.com/channel/mtgnerdgirl)"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16500169094052482629
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:PlayerMUID"
+            String: "ad3780ec764745e1b74d9372e44b62fc"
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "mtgnerdgirl (https___sullygnome_com_channel_mtgnerdgirl)"
+        }
+      }
+      Objects {
+        Id: 4100964845950257761
+        Name: "LanaLux (https://www.twitch.tv/lana_lux)"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16500169094052482629
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:PlayerMUID"
+            String: "4201c90059e44d1e97e36e2c7bac5a23"
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "LanaLux (https___www_twitch_tv_lana_lux)"
+        }
+      }
+      Objects {
+        Id: 270767524188549804
+        Name: "Jaxboxchick (https://www.twitch.tv/thatJaxboxchick)"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16500169094052482629
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:PlayerMUID"
+            String: "9bbb9aa699574f38a343965288ea3631"
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "Jaxboxchick (https___www_twitch_tv_thatJaxboxchick)"
+        }
+      }
+      Objects {
+        Id: 2881244425428650604
+        Name: "TheBronzeSword (https://www.twitch.tv/thebronzesword)"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16500169094052482629
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:PlayerMUID"
+            String: "9b74b9b6e1b44f2cb9d0e32542f45dd0"
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "TheBronzeSword (https___www_twitch_tv_thebronzesword)"
+        }
+      }
+      Objects {
+        Id: 15459241152027395900
+        Name: "MetsuRjKen (https://www.twitch.tv/metsurjken)"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16500169094052482629
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:PlayerMUID"
+            String: "3f3df1fed0e94e3fb104565b105719b1"
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "MetsuRjKen (https___www_twitch_tv_metsurjken)"
+        }
+      }
+      Objects {
+        Id: 13506665287524532555
+        Name: "Aphrim (https://www.youtube.com/c/Aphrim/videos)"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16500169094052482629
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:PlayerMUID"
+            String: "a7fa1014cab64595bee90b0049070c8e"
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "Aphrim (https___www_youtube_com_c_Aphrim_videos)"
+        }
+      }
+      Objects {
+        Id: 2886521030082077833
+        Name: "Morticai (https://www.youtube.com/c/GamerTitanYT/videos)"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16500169094052482629
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:PlayerMUID"
+            String: "d1073dbcc404405cbef8ce728e53d380"
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "Morticai (https___www_youtube_com_c_GamerTitanYT_videos)"
+        }
+      }
+      Objects {
+        Id: 13743368117243834200
+        Name: "YoinkedGaming (https://www.youtube.com/c/YoinkedGaming/videos)"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16500169094052482629
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:PlayerMUID"
+            String: "7430e37520c048f6b5a2f1bed6ffe806"
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "YoinkedGaming (https___www_youtube_com_c_YoinkedGaming_videos)"
+        }
+      }
+      Objects {
+        Id: 16617443843141007556
+        Name: "Ducain23 (https://www.youtube.com/c/DucainPlays/videos)"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16500169094052482629
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:PlayerMUID"
+            String: "5359877205574a7eaff309a89f7b3ba2"
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "Ducain23 (https___www_youtube_com_c_DucainPlays_videos)"
+        }
+      }
+      Objects {
+        Id: 2165355121103357985
+        Name: "StormHawk (https://www.youtube.com/c/StormHawk/videos)"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16500169094052482629
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:PlayerMUID"
+            String: "5404592aaf464226a7d5d854df570ee1"
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "StormHawk (https___www_youtube_com_c_StormHawk_videos)"
+        }
+      }
+      Objects {
+        Id: 9832028803407552609
+        Name: "RayBenefield (https://www.youtube.com/c/RayBenefield/videos)"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16500169094052482629
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:PlayerMUID"
+            String: "d71bfcddd01347a4ae597d5cf6d9e644"
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "RayBenefield (https___www_youtube_com_c_RayBenefield_videos)"
+        }
+      }
+      Objects {
+        Id: 1257210804188023078
+        Name: "Devoun (https://www.youtube.com/c/devoun)"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16500169094052482629
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:PlayerMUID"
+            String: "a299961f22cf4ef1a7247951e254481f"
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "Devoun (https___www_youtube_com_c_devoun)"
+        }
+      }
+      Objects {
+        Id: 14649963934128949309
+        Name: "DVPlays (https://www.youtube.com/c/DVwastaken/videos)"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16500169094052482629
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:PlayerMUID"
+            String: "eb1c0ef104ec431aa943946ff2c44f58"
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "DVPlays (https___www_youtube_com_c_DVwastaken_videos)"
+        }
+      }
+      Objects {
+        Id: 91993814830822493
+        Name: "Matworks (https://www.youtube.com/c/MATHIEU_YT/videos)"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16500169094052482629
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:PlayerMUID"
+            String: "5d18ee73e6a4425daf1ff036dc341db7"
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "Matworks (https___www_youtube_com_c_MATHIEU_YT_videos)"
+        }
+      }
+      Objects {
+        Id: 13235990868517900390
+        Name: "LotusCracker (https://www.youtube.com/c/lotuscracker)"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16500169094052482629
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:PlayerMUID"
+            String: "111fdb0a14b0407cb48f5856cf6f8f6e"
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "LotusCracker (https___www_youtube_com_c_lotuscracker)"
+        }
+      }
+      Objects {
+        Id: 5064084769609547846
+        Name: "pinkpockettv (https://www.youtube.com/c/pinkpocketTV/videos)"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16500169094052482629
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:PlayerMUID"
+            String: "634f2c4edc2d468da55bd1f678381643"
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "pinkpockettv (https___www_youtube_com_c_pinkpocketTV_videos)"
+        }
+      }
+      Objects {
+        Id: 17303289216619758049
+        Name: "Noangy (https://www.youtube.com/c/BetronerGames/videos)"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16500169094052482629
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:PlayerMUID"
+            String: "d9f857d1115340268b03028e448e7022"
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "Noangy (https___www_youtube_com_c_BetronerGames_videos)"
+        }
+      }
+      Objects {
+        Id: 12062631381026758550
+        Name: "ICEARROW_YOUTUBE (https://www.youtube.com/c/IceArrow/videos)"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16500169094052482629
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:PlayerMUID"
+            String: "ff38c9b715124d9a98273b11be6e3ca7"
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "ICEARROW_YOUTUBE (https___www_youtube_com_c_IceArrow_videos)"
+        }
+      }
+      Objects {
+        Id: 12442067786852216568
+        Name: "Mucusinator (https://www.youtube.com/c/Arkpoint/videos)"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16500169094052482629
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:PlayerMUID"
+            String: "94d3fd50c4824f019421895ec8dbf099"
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "Mucusinator (https___www_youtube_com_c_Arkpoint_videos)"
+        }
+      }
+      Objects {
+        Id: 4291737791998627023
+        Name: "FLEX_CHADWELL (https://www.twitch.tv/flex_chadwell)"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16500169094052482629
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:PlayerMUID"
+            String: "d8b4a33bd7474f88b15dc615b0d1b493"
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "FLEX_CHADWELL (https___www_twitch_tv_flex_chadwell)"
+        }
+      }
+      Objects {
+        Id: 15557767220013683684
+        Name: "GGJay (https://www.twitch.tv/ggjay)"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16500169094052482629
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:PlayerMUID"
+            String: "bb257393aaae4c85bb9456f26997b302"
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "GGJay (https___www_twitch_tv_ggjay)"
+        }
+      }
+      Objects {
+        Id: 15239004600456978009
+        Name: "Twitch-RaynRaps (https://www.twitch.tv/raynraps/)"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16500169094052482629
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:PlayerMUID"
+            String: "1b180f2e6e5e44dea53e90a75f6bb77f"
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "Twitch-RaynRaps (https___www_twitch_tv_raynraps_)"
+        }
+      }
+      Objects {
+        Id: 6234854708654047621
+        Name: "KainAkin"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16500169094052482629
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:PlayerMUID"
+            String: "45a7ca3b086645679b2acf7721b060bf"
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "KainAkin"
+        }
+      }
+      Objects {
+        Id: 4435825606158170432
+        Name: "AtariKafa (https://www.twitch.tv/atarikafa)"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16500169094052482629
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:PlayerMUID"
+            String: "c3c1d0532c564d70850b992a1c2f2fb7"
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "AtariKafa (https___www_twitch_tv_atarikafa)"
+        }
+      }
+      Objects {
+        Id: 8796237671332316569
+        Name: "MrViirtuoz (https://www.youtube.com/user/MrVirTuoZLP/videos)"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16500169094052482629
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:PlayerMUID"
+            String: "f8bb887d774c486cb5c8f66625a8f011"
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "MrViirtuoz (https___www_youtube_com_user_MrVirTuoZLP_videos)"
+        }
+      }
+      Objects {
+        Id: 14126347449113239345
+        Name: "Vilva (https://youtube.com/c/vilva1)"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16500169094052482629
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:PlayerMUID"
+            String: "94473ebbd6ea41fa81c165f7a73d3acb"
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "Vilva (https___youtube_com_c_vilva1)"
+        }
+      }
+      Objects {
+        Id: 14746616144954316715
+        Name: "Bearskopff (https://www.youtube.com/c/BearlyRegal)"
+        Transform {
+          Location {
+          }
+          Rotation {
+          }
+          Scale {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        ParentId: 16500169094052482629
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:PlayerMUID"
+            String: "29f056813e1e491eafe7d6e258cfc010"
+          }
+        }
+        Collidable_v2 {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        Visible_v2 {
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }
+        CameraCollidable {
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }
+        EditorIndicatorVisibility {
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }
+        Folder {
+          IsFilePartition: true
+          FilePartitionName: "Bearskopff (https___www_youtube_com_c_BearlyRegal)"
         }
       }
       Objects {
@@ -3113,1251 +4358,6 @@ Assets {
         }
       }
       Objects {
-        Id: 16500169094052482629
-        Name: "Content Creator"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 6827826702186852842
-        ChildIds: 11915782065123767809
-        ChildIds: 318373897702449623
-        ChildIds: 3397268199534450473
-        ChildIds: 14884475478765231268
-        ChildIds: 4100964845950257761
-        ChildIds: 270767524188549804
-        ChildIds: 2881244425428650604
-        ChildIds: 15459241152027395900
-        ChildIds: 13506665287524532555
-        ChildIds: 2886521030082077833
-        ChildIds: 13743368117243834200
-        ChildIds: 16617443843141007556
-        ChildIds: 2165355121103357985
-        ChildIds: 9832028803407552609
-        ChildIds: 1257210804188023078
-        ChildIds: 14649963934128949309
-        ChildIds: 91993814830822493
-        ChildIds: 13235990868517900390
-        ChildIds: 5064084769609547846
-        ChildIds: 17303289216619758049
-        ChildIds: 12062631381026758550
-        ChildIds: 12442067786852216568
-        ChildIds: 4291737791998627023
-        ChildIds: 15557767220013683684
-        ChildIds: 15239004600456978009
-        ChildIds: 6234854708654047621
-        ChildIds: 4435825606158170432
-        ChildIds: 8796237671332316569
-        ChildIds: 14126347449113239345
-        ChildIds: 14746616144954316715
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:Title"
-            String: "Content Creator"
-          }
-          Overrides {
-            Name: "cs:TitleColor"
-            Color {
-              R: 0.896269679
-              G: 0.637597
-              B: 0.332451582
-              A: 1
-            }
-          }
-          Overrides {
-            Name: "cs:Icon"
-            AssetReference {
-              Id: 6595698929899861519
-            }
-          }
-          Overrides {
-            Name: "cs:IconColor"
-            Color {
-              R: 0.896269679
-              G: 0.637597
-              B: 0.332451582
-              A: 1
-            }
-          }
-          Overrides {
-            Name: "cs:IconRotation"
-            Float: 0
-          }
-          Overrides {
-            Name: "cs:IconSizeOffset"
-            Vector2 {
-            }
-          }
-          Overrides {
-            Name: "cs:IsModerator"
-            Bool: false
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Folder {
-          IsFilePartition: true
-          FilePartitionName: "Content Creator"
-        }
-      }
-      Objects {
-        Id: 11915782065123767809
-        Name: "LuckofBuck (https://www.tiktok.com/@luckofbuckdev)"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 16500169094052482629
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:PlayerMUID"
-            String: "e21aadb442b44ccaa39b2c4b12929f85"
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Folder {
-          IsFilePartition: true
-          FilePartitionName: "LuckofBuck (https___www_tiktok_com__luckofbuckdev)"
-        }
-      }
-      Objects {
-        Id: 318373897702449623
-        Name: "marcepan (https://www.tiktok.com/@rippleoverdrive)"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 16500169094052482629
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:PlayerMUID"
-            String: "2966d17cd7734da19e882335efffc4b8"
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Folder {
-          IsFilePartition: true
-          FilePartitionName: "marcepan (https___www_tiktok_com__rippleoverdrive)"
-        }
-      }
-      Objects {
-        Id: 3397268199534450473
-        Name: "OwndogGames (https://www.twitch.tv/owndoggames)"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 16500169094052482629
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:PlayerMUID"
-            String: "6035ae98674b45b690520eac49b0e78f"
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Folder {
-          IsFilePartition: true
-          FilePartitionName: "OwndogGames (https___www_twitch_tv_owndoggames)"
-        }
-      }
-      Objects {
-        Id: 14884475478765231268
-        Name: "mtgnerdgirl (https://sullygnome.com/channel/mtgnerdgirl)"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 16500169094052482629
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:PlayerMUID"
-            String: "ad3780ec764745e1b74d9372e44b62fc"
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Folder {
-          IsFilePartition: true
-          FilePartitionName: "mtgnerdgirl (https___sullygnome_com_channel_mtgnerdgirl)"
-        }
-      }
-      Objects {
-        Id: 4100964845950257761
-        Name: "LanaLux (https://www.twitch.tv/lana_lux)"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 16500169094052482629
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:PlayerMUID"
-            String: "4201c90059e44d1e97e36e2c7bac5a23"
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Folder {
-          IsFilePartition: true
-          FilePartitionName: "LanaLux (https___www_twitch_tv_lana_lux)"
-        }
-      }
-      Objects {
-        Id: 270767524188549804
-        Name: "Jaxboxchick (https://www.twitch.tv/thatJaxboxchick)"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 16500169094052482629
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:PlayerMUID"
-            String: "9bbb9aa699574f38a343965288ea3631"
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Folder {
-          IsFilePartition: true
-          FilePartitionName: "Jaxboxchick (https___www_twitch_tv_thatJaxboxchick)"
-        }
-      }
-      Objects {
-        Id: 2881244425428650604
-        Name: "TheBronzeSword (https://www.twitch.tv/thebronzesword)"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 16500169094052482629
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:PlayerMUID"
-            String: "9b74b9b6e1b44f2cb9d0e32542f45dd0"
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Folder {
-          IsFilePartition: true
-          FilePartitionName: "TheBronzeSword (https___www_twitch_tv_thebronzesword)"
-        }
-      }
-      Objects {
-        Id: 15459241152027395900
-        Name: "MetsuRjKen (https://www.twitch.tv/metsurjken)"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 16500169094052482629
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:PlayerMUID"
-            String: "3f3df1fed0e94e3fb104565b105719b1"
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Folder {
-          IsFilePartition: true
-          FilePartitionName: "MetsuRjKen (https___www_twitch_tv_metsurjken)"
-        }
-      }
-      Objects {
-        Id: 13506665287524532555
-        Name: "Aphrim (https://www.youtube.com/c/Aphrim/videos)"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 16500169094052482629
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:PlayerMUID"
-            String: "a7fa1014cab64595bee90b0049070c8e"
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Folder {
-          IsFilePartition: true
-          FilePartitionName: "Aphrim (https___www_youtube_com_c_Aphrim_videos)"
-        }
-      }
-      Objects {
-        Id: 2886521030082077833
-        Name: "Morticai (https://www.youtube.com/c/GamerTitanYT/videos)"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 16500169094052482629
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:PlayerMUID"
-            String: "d1073dbcc404405cbef8ce728e53d380"
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Folder {
-          IsFilePartition: true
-          FilePartitionName: "Morticai (https___www_youtube_com_c_GamerTitanYT_videos)"
-        }
-      }
-      Objects {
-        Id: 13743368117243834200
-        Name: "YoinkedGaming (https://www.youtube.com/c/YoinkedGaming/videos)"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 16500169094052482629
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:PlayerMUID"
-            String: "7430e37520c048f6b5a2f1bed6ffe806"
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Folder {
-          IsFilePartition: true
-          FilePartitionName: "YoinkedGaming (https___www_youtube_com_c_YoinkedGaming_videos)"
-        }
-      }
-      Objects {
-        Id: 16617443843141007556
-        Name: "Ducain23 (https://www.youtube.com/c/DucainPlays/videos)"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 16500169094052482629
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:PlayerMUID"
-            String: "5359877205574a7eaff309a89f7b3ba2"
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Folder {
-          IsFilePartition: true
-          FilePartitionName: "Ducain23 (https___www_youtube_com_c_DucainPlays_videos)"
-        }
-      }
-      Objects {
-        Id: 2165355121103357985
-        Name: "StormHawk (https://www.youtube.com/c/StormHawk/videos)"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 16500169094052482629
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:PlayerMUID"
-            String: "5404592aaf464226a7d5d854df570ee1"
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Folder {
-          IsFilePartition: true
-          FilePartitionName: "StormHawk (https___www_youtube_com_c_StormHawk_videos)"
-        }
-      }
-      Objects {
-        Id: 9832028803407552609
-        Name: "RayBenefield (https://www.youtube.com/c/RayBenefield/videos)"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 16500169094052482629
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:PlayerMUID"
-            String: "d71bfcddd01347a4ae597d5cf6d9e644"
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Folder {
-          IsFilePartition: true
-          FilePartitionName: "RayBenefield (https___www_youtube_com_c_RayBenefield_videos)"
-        }
-      }
-      Objects {
-        Id: 1257210804188023078
-        Name: "Devoun (https://www.youtube.com/c/devoun)"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 16500169094052482629
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:PlayerMUID"
-            String: "a299961f22cf4ef1a7247951e254481f"
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Folder {
-          IsFilePartition: true
-          FilePartitionName: "Devoun (https___www_youtube_com_c_devoun)"
-        }
-      }
-      Objects {
-        Id: 14649963934128949309
-        Name: "DVPlays (https://www.youtube.com/c/DVwastaken/videos)"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 16500169094052482629
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:PlayerMUID"
-            String: "eb1c0ef104ec431aa943946ff2c44f58"
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Folder {
-          IsFilePartition: true
-          FilePartitionName: "DVPlays (https___www_youtube_com_c_DVwastaken_videos)"
-        }
-      }
-      Objects {
-        Id: 91993814830822493
-        Name: "Matworks (https://www.youtube.com/c/MATHIEU_YT/videos)"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 16500169094052482629
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:PlayerMUID"
-            String: "5d18ee73e6a4425daf1ff036dc341db7"
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Folder {
-          IsFilePartition: true
-          FilePartitionName: "Matworks (https___www_youtube_com_c_MATHIEU_YT_videos)"
-        }
-      }
-      Objects {
-        Id: 13235990868517900390
-        Name: "LotusCracker (https://www.youtube.com/c/lotuscracker)"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 16500169094052482629
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:PlayerMUID"
-            String: "111fdb0a14b0407cb48f5856cf6f8f6e"
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Folder {
-          IsFilePartition: true
-          FilePartitionName: "LotusCracker (https___www_youtube_com_c_lotuscracker)"
-        }
-      }
-      Objects {
-        Id: 5064084769609547846
-        Name: "pinkpockettv (https://www.youtube.com/c/pinkpocketTV/videos)"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 16500169094052482629
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:PlayerMUID"
-            String: "634f2c4edc2d468da55bd1f678381643"
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Folder {
-          IsFilePartition: true
-          FilePartitionName: "pinkpockettv (https___www_youtube_com_c_pinkpocketTV_videos)"
-        }
-      }
-      Objects {
-        Id: 17303289216619758049
-        Name: "Noangy (https://www.youtube.com/c/BetronerGames/videos)"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 16500169094052482629
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:PlayerMUID"
-            String: "d9f857d1115340268b03028e448e7022"
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Folder {
-          IsFilePartition: true
-          FilePartitionName: "Noangy (https___www_youtube_com_c_BetronerGames_videos)"
-        }
-      }
-      Objects {
-        Id: 12062631381026758550
-        Name: "ICEARROW_YOUTUBE (https://www.youtube.com/c/IceArrow/videos)"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 16500169094052482629
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:PlayerMUID"
-            String: "ff38c9b715124d9a98273b11be6e3ca7"
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Folder {
-          IsFilePartition: true
-          FilePartitionName: "ICEARROW_YOUTUBE (https___www_youtube_com_c_IceArrow_videos)"
-        }
-      }
-      Objects {
-        Id: 12442067786852216568
-        Name: "Mucusinator (https://www.youtube.com/c/Arkpoint/videos)"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 16500169094052482629
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:PlayerMUID"
-            String: "94d3fd50c4824f019421895ec8dbf099"
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Folder {
-          IsFilePartition: true
-          FilePartitionName: "Mucusinator (https___www_youtube_com_c_Arkpoint_videos)"
-        }
-      }
-      Objects {
-        Id: 4291737791998627023
-        Name: "FLEX_CHADWELL (https://www.twitch.tv/flex_chadwell)"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 16500169094052482629
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:PlayerMUID"
-            String: "d8b4a33bd7474f88b15dc615b0d1b493"
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Folder {
-          IsFilePartition: true
-          FilePartitionName: "FLEX_CHADWELL (https___www_twitch_tv_flex_chadwell)"
-        }
-      }
-      Objects {
-        Id: 15557767220013683684
-        Name: "GGJay (https://www.twitch.tv/ggjay)"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 16500169094052482629
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:PlayerMUID"
-            String: "bb257393aaae4c85bb9456f26997b302"
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Folder {
-          IsFilePartition: true
-          FilePartitionName: "GGJay (https___www_twitch_tv_ggjay)"
-        }
-      }
-      Objects {
-        Id: 15239004600456978009
-        Name: "Twitch-RaynRaps (https://www.twitch.tv/raynraps/)"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 16500169094052482629
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:PlayerMUID"
-            String: "1b180f2e6e5e44dea53e90a75f6bb77f"
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Folder {
-          IsFilePartition: true
-          FilePartitionName: "Twitch-RaynRaps (https___www_twitch_tv_raynraps_)"
-        }
-      }
-      Objects {
-        Id: 6234854708654047621
-        Name: "KainAkin"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 16500169094052482629
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:PlayerMUID"
-            String: "45a7ca3b086645679b2acf7721b060bf"
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Folder {
-          IsFilePartition: true
-          FilePartitionName: "KainAkin"
-        }
-      }
-      Objects {
-        Id: 4435825606158170432
-        Name: "AtariKafa (https://www.twitch.tv/atarikafa)"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 16500169094052482629
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:PlayerMUID"
-            String: "c3c1d0532c564d70850b992a1c2f2fb7"
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Folder {
-          IsFilePartition: true
-          FilePartitionName: "AtariKafa (https___www_twitch_tv_atarikafa)"
-        }
-      }
-      Objects {
-        Id: 8796237671332316569
-        Name: "MrViirtuoz (https://www.youtube.com/user/MrVirTuoZLP/videos)"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 16500169094052482629
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:PlayerMUID"
-            String: "f8bb887d774c486cb5c8f66625a8f011"
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Folder {
-          IsFilePartition: true
-          FilePartitionName: "MrViirtuoz (https___www_youtube_com_user_MrVirTuoZLP_videos)"
-        }
-      }
-      Objects {
-        Id: 14126347449113239345
-        Name: "Vilva (https://youtube.com/c/vilva1)"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 16500169094052482629
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:PlayerMUID"
-            String: "94473ebbd6ea41fa81c165f7a73d3acb"
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Folder {
-          IsFilePartition: true
-          FilePartitionName: "Vilva (https___youtube_com_c_vilva1)"
-        }
-      }
-      Objects {
-        Id: 14746616144954316715
-        Name: "Bearskopff (https://www.youtube.com/c/BearlyRegal)"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 16500169094052482629
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:PlayerMUID"
-            String: "29f056813e1e491eafe7d6e258cfc010"
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Folder {
-          IsFilePartition: true
-          FilePartitionName: "Bearskopff (https___www_youtube_com_c_BearlyRegal)"
-        }
-      }
-      Objects {
         Id: 9311108598448503833
         Name: "Handler"
         Transform {
@@ -4376,6 +4376,10 @@ Assets {
           Overrides {
             Name: "cs:HandlerInstance"
             ObjectReference {
+              SelfId: 11724767167986023796
+              SubObjectId: 3919527880117986418
+              InstanceId: 5500048560983525449
+              TemplateId: 16302603277956090916
             }
           }
           Overrides {
@@ -5247,6 +5251,15 @@ Assets {
       }
     }
     Assets {
+      Id: 6595698929899861519
+      Name: "Icon Star"
+      PlatformAssetType: 9
+      PrimaryAsset {
+        AssetType: "PlatformBrushAssetRef"
+        AssetId: "Icon_Star"
+      }
+    }
+    Assets {
       Id: 12643252433729064444
       Name: "Infinity"
       PlatformAssetType: 9
@@ -5262,15 +5275,6 @@ Assets {
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
         AssetId: "Icon_Manticore"
-      }
-    }
-    Assets {
-      Id: 6595698929899861519
-      Name: "Icon Star"
-      PlatformAssetType: 9
-      PrimaryAsset {
-        AssetType: "PlatformBrushAssetRef"
-        AssetId: "Icon_Star"
       }
     }
     Assets {
